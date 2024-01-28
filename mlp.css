@@ -92,3 +92,22 @@ button[type=action].sheet-d6-dice::before {
 .button:hover {
   background-color: rgb(159, 159, 159);
 }
+
+.charsheet .left {
+  text-align: left;
+}
+
+.row {
+  display: table;
+  color: blue;
+  clear: both;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.charsheet .rowitem {
+  display: inline-block;
+}

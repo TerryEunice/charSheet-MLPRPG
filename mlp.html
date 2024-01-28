@@ -1,39 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MLP Character Sheet</title>
+	<link rel="stylesheet" href="mlp.css">
+</head>
 
-
-<div class="banner image">
-    <img src="https://github.com/TerryEunice/PeterCharSheet/blob/main/banner.png?raw=true width="400">
+<body>
+<div class="row">
+	<div class="column">
+		Name
+		<div class="cell"><input type="text" name="attr_nome"></div>
+		Origin
+		<div class="cell"><input type="text" name="attr_origin"></div>
+	</div>
+	<div class="image column">
+		<img src="banner.png" width="250">
+	</div>
+	<div class="column">
+		Pronouns
+		<div class="cell"><input type="text" name="attr_origin"></div>
+		Role
+		<div class="cell"><input type="text" name="attr_origin"></div>
+	</div>
 </div>
 
+<div class="row">
+	<div class="column">
+		Description
+		<div class="cell"><input type="text" name="attr_origin"></div>
+	</div>
+	<div class="column">
+		Languages
+		<div class="cell"><input type="text" name="attr_origin"></div>
+	</div>
+	<div class="column">
+		Movement
+		<div class="cell"><input type="text" name="attr_origin"></div>
+	</div>
+</div>
 
-<div class="lines">
-    Name
-    <div class="cell"><input type="text" name="attr_nome"></div>
-	Origin
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Pronouns
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Desrcitpion
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Languages
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Movement
-	<div class="damage">
+<div class="row">
+	<div class="column">
+		<div class="row">
+			<div class="column">
+				Influences
+				<div class="cell"><input type="text" name="attr_origin"></div>
+			</div>
+			<div class="column">
+				Friendship Points
+				<div class="cell"><input type="text" name="attr_origin"></div>
+			</div>
+			<div class="column">
+				Wealth Status
+				<div class="cell"><input type="text" name="attr_origin"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="column">
+				Hang-ups
+				<div class="cell"><input type="text" name="attr_origin"></div>
+			</div>
+			<div class="column">
+				Health
+				<div class="cell"><input type="text" name="attr_origin"></div>
+			</div>
+		</div>
+		
+		<div class="row"><div class="column">
+		<div class="damage">
 		Damage
 		<input type="radio" name="attr_sheet_type" id="sheetTabPC" value="0" checked="checked" spellcheck="false"/>
 		<input type="radio" name="attr_sheet_type" id="sheetTabNPC" value="1" spellcheck="false"/>
 		<input type="radio" name="attr_sheet_type" id="sheetTabVehicle" value="2" spellcheck="false"/>
 		<input type="radio" name="attr_sheet_type" id="sheetTabEquipment" value="3" spellcheck="false"/>
 		<input type="radio" name="attr_sheet_type" id="sheetTabNotes" value="4" spellcheck="false"/>
-	</div.
+		</div>
+		</div></div>
+	</div>
+	<div class="column">
+		Attack
+	</div>
 </div>
-
 
 <hr><em>IZZY</em></hr>
 
+<div class="row">
+	<div class="column">
+		<h3>Strength</h3>
+		<div class="row">
+			Toughness
+		</div>
+		Athletics<br>
+		Brawn<br>
+		Conditioning<br>
+		Imtimidation<br>
+		Might<br>
+	</div>
+	<div class="column">
+		<h3>Speed</h3>
+		<div class="row">
+			Evasion
+		</div>
+		Acrobatics<br>
+		Driving<br>
+		Finesse<br>
+		Infiltration<br>
+		Initiative<br>
+		Targeting<br>
+	</div>
+	<div class="column">
+		<h3>Smarts</h3>
+		<div class="row">
+			Willpower
+		</div>
+		Alertness<br>
+		Culture<br>
+		Science<br>
+		Survival<br>
+		Technology<br>
+	</div>
+	<div class="column">
+		<h3>Social</h3>
+		<div class="row">
+			Cleverness
+		</div>
+		Animal Handling<br>
+		Deception<br>
+		Performance<br>
+		Persuasion<br>
+		Streetwise<br>
+	</div>
+</div>
+<hr>
+
 <div class="lines top">
-    <div class="cell width-60 "><span>RAÇA</span></div>
+    <div class="cell width-60 "><span>RACE</span></div>
     <div class="cell width-40 "><button type="action" name="act_btnRaca" class="sheet-d6-dice"></button></div>
-    <div class="cell width-190"><input type="text" name="attr_raca" class="width-170" ></div>
+    <div class="cell width-400"><input type="text" name="attr_raca" class="width-170" ></div>
     <div class="cell width-100"><span>VANTAGEM</span></div>
     <div class="cell top">      <textarea name="attr_racaVantagem" class="width-400"></textarea></div>
 </div>
@@ -592,6 +696,5 @@ function randomInteger(max){
 }
 
 </script>
-
-
-
+</body>
+</html>
