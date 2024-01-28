@@ -1,21 +1,36 @@
-<div class="linha centre">
-    <img src="https://i0.wp.com/coisinhaverde.com.br/jogos/wp-content/uploads/2019/09/LOGO-Notequest-PRETO-sem-fundo.png?w=700&ssl=1" width="400">
+
+
+<div class="banner image">
+    <img src="https://github.com/TerryEunice/PeterCharSheet/blob/main/banner.png?raw=true width="400">
 </div>
 
-<div class="linha">
-    &nbsp;
-    <br>
-    &nbsp;
-</div>
 
-<div class="linha">
-    <div class="cell width-60"><span>NOME</span></div>
+<div class="lines">
+    Name
     <div class="cell"><input type="text" name="attr_nome"></div>
+	Origin
+    <div class="cell"><input type="text" name="attr_origin"></div>
+	Pronouns
+    <div class="cell"><input type="text" name="attr_origin"></div>
+	Desrcitpion
+    <div class="cell"><input type="text" name="attr_origin"></div>
+	Languages
+    <div class="cell"><input type="text" name="attr_origin"></div>
+	Movement
+	<div class="damage">
+		Damage
+		<input type="radio" name="attr_sheet_type" id="sheetTabPC" value="0" checked="checked" spellcheck="false"/>
+		<input type="radio" name="attr_sheet_type" id="sheetTabNPC" value="1" spellcheck="false"/>
+		<input type="radio" name="attr_sheet_type" id="sheetTabVehicle" value="2" spellcheck="false"/>
+		<input type="radio" name="attr_sheet_type" id="sheetTabEquipment" value="3" spellcheck="false"/>
+		<input type="radio" name="attr_sheet_type" id="sheetTabNotes" value="4" spellcheck="false"/>
+	</div.
 </div>
 
-<div class="linha">&nbsp;</div>
 
-<div class="linha top">
+<hr><em>IZZY</em></hr>
+
+<div class="lines top">
     <div class="cell width-60 "><span>RAÇA</span></div>
     <div class="cell width-40 "><button type="action" name="act_btnRaca" class="sheet-d6-dice"></button></div>
     <div class="cell width-190"><input type="text" name="attr_raca" class="width-170" ></div>
@@ -24,7 +39,7 @@
 </div>
 
 <hr>
-<div class="linha top">
+<div class="lines top">
     <label>CLASSE</label>
     <fieldset class="repeating_class">
         <div class="cell width-60 "><span>CLASSE</span></div>       
@@ -38,20 +53,20 @@
 <hr>
 
 
-<div class="linha">
+<div class="lines">
 
     <div class="cell width-150">
-        <div class="linha">
+        <div class="lines">
             <div class="cell">
                 <div class="cell width-70"> <span>PV</span> </div>
                 <div class="cell width-30"> <input type="number" name="attr_pv" min="0"  min="0" value="0"> </div>
             </div>
         </div>
 
-        <div class="linha">&nbsp;</div>
+        <div class="lines">&nbsp;</div>
 
         
-        <div class="linha">
+        <div class="lines">
             <div class="cell width-70"> <span>MOEDAS</span> </div>
             <div class="cell width-30"> <input type="number" name="attr_moedas"  min="0" value="0"> </div>
         </div>
@@ -60,16 +75,16 @@
 
     <div class="cell width-210">
 
-        <div class="linha"> 
+        <div class="lines"> 
 
             <div class="cell width-90 valign"> <span>PROVISÕES</span> </div>
             <div class="cell cell width-85">   <input type="number" name="attr_provisoes" min="0" max="20" value="20"></div>
 
         </div>
 
-        <div class="linha">&nbsp;</div>
+        <div class="lines">&nbsp;</div>
 
-        <div class="linha">
+        <div class="lines">
 
             <div class="cell valign width-90"> <span>TOCHAS</span> </div>
             <div class="cell"> <input type="number" name="attr_tochas" min="0" max="10" value="10"></div>
@@ -79,8 +94,8 @@
     </div>
 
     <div class="cell">
-        <div class="linha">
-            <div class="linha centre"><label>DADOS</label></div>
+        <div class="lines">
+            <div class="banner image"><label>DADOS</label></div>
             <div class="cell valign">
                 <div class="cell width-60"><input type='number' name="attr_dados" value="1" min="1"></div>
                 <div class="cell width-70"><span>dados &nbsp;&nbsp;&nbsp;+ </span></div>
@@ -93,7 +108,7 @@
 </div>
 
 
-<div class="linha">
+<div class="lines">
 
     <div class="cell width-60"></div>
 
@@ -104,13 +119,13 @@
 <hr>
 
 
-<div class="linha">
+<div class="lines">
 
     
     <div class="cell width-310">
-        <div class="linha"><label>EQUIPAMENTOS</label></div>
+        <div class="lines"><label>EQUIPAMENTOS</label></div>
 
-        <div class="linha">
+        <div class="lines">
             <div class="cell width-100">
                 <span>ARMA</span>
             </div>
@@ -119,7 +134,7 @@
             </div>
         </div>
 
-        <div class="linha">
+        <div class="lines">
             <div class="cell width-100">
                 <span>CABEÇA</span>
             </div>
@@ -128,7 +143,7 @@
             </div>
         </div>
 
-        <div class="linha">
+        <div class="lines">
             <div class="cell width-100">
                 <span>PEITORAL</span>
             </div>
@@ -137,7 +152,7 @@
             </div>
         </div>
 
-        <div class="linha">
+        <div class="lines">
             <div class="cell width-100">
                 <span>OMBREIRAS</span>
             </div>
@@ -146,7 +161,7 @@
             </div>
         </div>
 
-        <div class="linha">
+        <div class="lines">
             <div class="cell width-100">
                 <span>BRACELETES</span>
             </div>
@@ -155,7 +170,7 @@
             </div>
         </div>
 
-        <div class="linha">
+        <div class="lines">
             <div class="cell width-100">
                 <span>BOTAS</span>
             </div>
@@ -166,9 +181,9 @@
 
         <hr>
 
-        <div class="linha"><label>MOCHILA</label></div>
+        <div class="lines"><label>MOCHILA</label></div>
         
-        <div class="linha">
+        <div class="lines">
             <fieldset class="repeating_mochila">
                 <input type="text" name="attr_item" class="width-255">
                 <input type="number" name="attr_itemQtd">
@@ -177,23 +192,23 @@
 
         <hr>
         
-        <div class="linha"><label>MAGIAS</label></div>
+        <div class="lines"><label>MAGIAS</label></div>
 
-        <div class="linha">
+        <div class="lines">
 
-            <div class="linha">
+            <div class="lines">
                 <div class="cell width-260"><span>MAGIAS</span></div>
                 <div class="cell width-50"><span>QTD</span></div>
             </div>
 
             <fieldset class="repeating_magias">
 
-                <div class="linha">
+                <div class="lines">
                     <input type="text"   name="attr_magia"  class="width-255">
                     <input type="number" name="attr_magiaQtd" value="0" min="0">
                 </div>
 
-                <div class="linha">
+                <div class="lines">
                     <textarea name="attr_magiaUso" name="attr_magiaEfeito" class="width-295" placeholder="EFEITO"></textarea>
                 </div>
 
@@ -207,34 +222,34 @@
     <div class="cell width-50"></div>
 
     <div class="cell">
-        <div class="linha"><label>MONSTROS</label></div>
+        <div class="lines"><label>MONSTROS</label></div>
 
         <div class="cell width-180">
-            <div class="linha"><span>MONSTRO</span></div>
+            <div class="lines"><span>MONSTRO</span></div>
         </div>
         <div class="cell width-50">
-            <div class="linha"><span>PV</span></div>
+            <div class="lines"><span>PV</span></div>
         </div>
         <div class="cell width-100">
-            <div class="linha"><span>DANO</span></div>
+            <div class="lines"><span>DANO</span></div>
         </div>
         <div class="cell">
-            <div class="linha"><span>ESPECIAL</span></div>
+            <div class="lines"><span>ESPECIAL</span></div>
         </div>
 
 
         <fieldset class="repeating_mostro">
             <div class="cell">
-                <div class="linha"><input type="text"   name="attr_monstro" class="width-180"></div>
+                <div class="lines"><input type="text"   name="attr_monstro" class="width-180"></div>
             </div>
             <div class="cell">
-                <div class="linha"><input type="number" name="attr_monstroPv" class="width-50"  min="0" value="0"></div>
+                <div class="lines"><input type="number" name="attr_monstroPv" class="width-50"  min="0" value="0"></div>
             </div>
             <div class="cell">
-                <div class="linha"><input type="text"   name="attr_monstroDano" class="width-100"></div>
+                <div class="lines"><input type="text"   name="attr_monstroDano" class="width-100"></div>
             </div>
             <div class="cell">
-                <div class="linha"><input type="text"   name="attr_monstroEspecial" class="width-150"></div>
+                <div class="lines"><input type="text"   name="attr_monstroEspecial" class="width-150"></div>
             </div>
         </fieldset>
     </div>
