@@ -80,7 +80,7 @@
   border: 1px solid rgba(208, 208, 208); 
 }
 
-.charsheet .centre{  
+.centre{  
   text-align: center;
 }
 
@@ -93,7 +93,7 @@ button[type=action].sheet-d6-dice::before {
   background-color: rgb(159, 159, 159);
 }
 
-.charsheet .left {
+.left {
   text-align: left;
 }
 
@@ -110,4 +110,131 @@ button[type=action].sheet-d6-dice::before {
 
 .charsheet .rowitem {
   display: inline-block;
+}
+
+
+.sheet-essence-section {
+display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 810px;
+  grid-template-areas:"strength speed smarts social";
+  grid-gap: 5px;
+
+}
+
+.sheet-strength-section {
+display: grid;
+  grid-template-columns: 180px;
+  grid-template-rows: 50px 140px 140px 140px 140px 140px;
+  grid-template-areas:	"strength-essence"
+						"athletics" 
+						"brawn"
+						"conditioning"
+						"intimidtaion"
+						"might";
+  grid-gap: 5px;
+}
+
+.sheet-specilization-section {
+display: grid;
+  grid-template-columns: 150px;
+  grid-template-rows: 28px 28px 28px 28px;
+  grid-template-areas:	"die-val"
+						"spec-1"
+						"spec-2"
+						"spec-3";
+grid-gap: 5px;
+}
+
+
+div.sheet-block{
+  display: grid;
+  justify-content: center;
+  padding: 5px;
+  border: 3px solid #371e58;
+  border-radius: 15px;
+  background-color: #dcb3d4
+}
+
+div.sheet-block-2{
+  display: grid;
+  justify-content: center;
+  border: 2px solid #371e58;
+  border-radius: 10px;
+  background-color: #ffffff
+}
+
+div.sheet-block-3{
+  display: grid;
+  justify-content: center;
+  padding: 5px;
+}
+
+div.sheet-block-4{
+  display: grid;
+  justify-content: center;
+  padding: 2px;
+  border: 1px solid #371e58;
+  border-radius: 10px;
+  background-color: #f1f4ff
+}
+
+div.sheet-strength{
+	grid-area: strength;
+}
+div.sheet-speed{
+	grid-area: speed;
+}
+div.sheet-smarts{
+	grid-area: smarts;
+}
+div.sheet-social{
+	grid-area: social;
+}
+
+div.sheet-die-val{
+	grid-area: die-val;
+	justify-content: left;
+}
+div.sheet-spec_1{
+	grid-area: spec_1;
+}
+div.sheet-spec_2{
+	grid-area: spec_2;
+}
+div.sheet-spec_3{
+	grid-area: spec_3;
+}
+
+
+
+div.sheet-strength-essence{
+	grid-area: strength-essence;
+}
+div.sheet-athletics{
+	grid-area: athletics;
+}
+div.sheet-brawn{
+	grid-area: brawn;
+}
+div.sheet-conditioning{
+	grid-area: conditioning;
+}
+div.sheet-intimidtaion{
+	grid-area: intimidtaion;
+}
+div.sheet-might{
+	grid-area: might;
+}
+
+
+.sheet-grid-section{
+  display: grid;
+  grid-template-columns: 400px 200px 200px;
+  grid-template-rows:  60px 150px 150px 150px;
+  grid-template-areas:"namelvl hp    hp "
+                      "skills  stat  stat "
+                      "skills  equip  izzy"
+                      "notes   equip  izzy";
+  grid-gap: 5px;
 }

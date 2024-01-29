@@ -134,6 +134,83 @@
 </div>
 <hr>
 
+<div class="sheet-essence-section">
+	<div class="sheet-strength-section sheet-block">
+        <div class="sheet-strength-essence sheet-block-3">	
+			<div class="centre">
+				<label for="toughness">Toughness</label>
+				<input type="text" name="attr_toughness" id="toughness" size="2" maxlength="2">
+			</div>
+			<div> 
+				10 + 
+				<input type="text" name="attr_toughness_esssence" id="toughness_essence" size="2" maxlength="2">
+				+
+				<input type="text" name="attr_toughness_perk" id="toughness_perk" size="2" maxlength="3">
+				+
+				<input type="text" name="attr_toughness_armour" id="toughness_armour" size="2" maxlength="2">
+			</div>
+		</div>
+		<div class="sheet-athletics sheet-block-2 sheet-specilization-section">
+			<div class="sheet-die-val sheet-block-3">
+				<div>
+					<label for="athletics-die">Athletics</label>
+					<select name="attr_athletics-die" id="athletics-die">
+						<option value="d0">0</option>
+						<option value="d2">d2</option>
+						<option value="d4">d4</option>
+						<option value="d6">d6</option>
+						<option value="d8">d8</option>
+						<option value="d10">d10</option>
+						<option value="d12">d12</option>
+					</select> 
+				</div>
+			</div>
+			<!--Add the specilization options-->
+			<div class="sheet-spec1 sheet-block-4">
+				<div>
+					<input type="checkbox">
+					<input type="text" name="attr_ath_spec_1" id="ath_spec_1" size="10">
+				</div>
+			</div>
+			<div class="sheet-spec1 sheet-block-4">
+				<div>
+					<input type="checkbox">
+					<input type="text" name="attr_ath_spec_2" id="ath_spec_2" size="10">
+				</div>
+			</div>
+			<div class="sheet-spec1 sheet-block-4">
+				<div>
+					<input type="checkbox">
+					<input type="text" name="attr_ath_spec_3" id="ath_spec_3" size="10">
+				</div>
+			</div>
+		</div>
+		<div class="sheet-brawn sheet-block-2">
+			Brawn
+		</div>
+		<div class="sheet-conditioning sheet-block-2">
+			Conditioning
+		</div>
+		<div class="sheet-initmidation sheet-block-2">
+			Imtimidation
+		</div>
+		<div class="sheet-might sheet-block-2">
+			Might
+		</div>
+	</div>
+	<div class="sheet-speed sheet-block"> 
+		Speed
+	</div>
+	<div class="sheet-smarts sheet-block"> 
+		Smarts
+	</div>
+	<div class="sheet-social sheet-block"> 
+		Social
+	</div>
+
+
+</div>
+
 <div class="lines top">
     <div class="cell width-60 "><span>RACE</span></div>
     <div class="cell width-40 "><button type="action" name="act_btnRaca" class="sheet-d6-dice"></button></div>
