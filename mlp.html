@@ -1,597 +1,631 @@
 
+<div id="the-whole-enchilada">
 
-<div class="banner image">
-    <img src="https://github.com/TerryEunice/PeterCharSheet/blob/main/banner.png?raw=true width="400">
+
+
+
+
+
+<div class="row">
+	<div class="column">
+		Name
+		<div class="cell"><input type="text" name="attr_character_name"></div>
+		Origin
+		<div class="cell"><input type="text" name="attr_origin"></div>
+	</div>
+	<div class="image column">
+		<!-- <img src="https://github.com/TerryEunice/PeterCharSheet/blob/main/banner.png?raw=true" width="250"> -->
+		<img name="attr_character_avatar">
+	</div>
+	<div class="column">
+		Pronouns
+		<div class="cell"><input type="text" name="attr_pronoun" class="die-dropdown-size"></div>
+		Role
+		<div class="cell"><input type="text" name="attr_role"></div>
+	</div>
 </div>
 
-
-<div class="lines">
-    Name
-    <div class="cell"><input type="text" name="attr_nome"></div>
-	Origin
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Pronouns
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Desrcitpion
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Languages
-    <div class="cell"><input type="text" name="attr_origin"></div>
-	Movement
-	<div class="damage">
-		Damage
-		<input type="radio" name="attr_sheet_type" id="sheetTabPC" value="0" checked="checked" spellcheck="false"/>
-		<input type="radio" name="attr_sheet_type" id="sheetTabNPC" value="1" spellcheck="false"/>
-		<input type="radio" name="attr_sheet_type" id="sheetTabVehicle" value="2" spellcheck="false"/>
-		<input type="radio" name="attr_sheet_type" id="sheetTabEquipment" value="3" spellcheck="false"/>
-		<input type="radio" name="attr_sheet_type" id="sheetTabNotes" value="4" spellcheck="false"/>
-	</div.
+<div class="row">
+	<div class="column">
+		Description
+		<div class="cell">
+			<textarea name="attr_desrciption" cols="10" rows="1" class="sheet-text-area test34"></textarea>
+		</div>
+	</div>
+	<div class="column">
+		Languages
+		<div class="cell"><input type="text" name="attr_language" class="test34"></div>
+	</div>
+	<div class="column">
+		Movement
+		<div class="cell"><input type="text" name="attr_movement"></div>
+	</div>
 </div>
 
-
-<hr><em>IZZY</em></hr>
-
-<div class="lines top">
-    <div class="cell width-60 "><span>RAÇA</span></div>
-    <div class="cell width-40 "><button type="action" name="act_btnRaca" class="sheet-d6-dice"></button></div>
-    <div class="cell width-190"><input type="text" name="attr_raca" class="width-170" ></div>
-    <div class="cell width-100"><span>VANTAGEM</span></div>
-    <div class="cell top">      <textarea name="attr_racaVantagem" class="width-400"></textarea></div>
+<div class="row">
+	<div class="column">
+		<div class="row">
+			<div class="column">
+				Influences
+				<div class="cell"><input type="text" name="attr_influences"></div>
+			</div>
+			<div class="column">
+				Friendship Points
+				<div class="cell"><input type="text" name="attr_freidnship"></div>
+			</div>
+			<div class="column">
+				Wealth Status
+				<div class="cell"><input type="text" name="attr_money"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="column">
+				Hang-ups
+				<div class="cell"><input type="text" name="attr_hang-up"></div>
+			</div>
+			<div class="column">
+				Health
+				<div class="cell"><input type="text" name="attr_health"></div>
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		Attack
+	</div>
 </div>
-
-<hr>
-<div class="lines top">
-    <label>CLASSE</label>
-    <fieldset class="repeating_class">
-        <div class="cell width-60 "><span>CLASSE</span></div>       
-        <div class="cell width-190"><input  type="text"   name="attr_classe"   class="width-170"></div> 
-        <div class="cell width-40 "><button type="action" name="act_btnClasse" class="sheet-d6-dice"></button></div>
-        <div class="cell width-100"><span>VANTAGEM</span></div>
-        <div class="cell top">      <textarea name="attr_classeVantagem" class="width-400"></textarea></div>
-    </fieldset>
-</div>
-
-<hr>
-
-
-<div class="lines">
-
-    <div class="cell width-150">
-        <div class="lines">
-            <div class="cell">
-                <div class="cell width-70"> <span>PV</span> </div>
-                <div class="cell width-30"> <input type="number" name="attr_pv" min="0"  min="0" value="0"> </div>
-            </div>
-        </div>
-
-        <div class="lines">&nbsp;</div>
-
-        
-        <div class="lines">
-            <div class="cell width-70"> <span>MOEDAS</span> </div>
-            <div class="cell width-30"> <input type="number" name="attr_moedas"  min="0" value="0"> </div>
-        </div>
-    </div>
-
-
-    <div class="cell width-210">
-
-        <div class="lines"> 
-
-            <div class="cell width-90 valign"> <span>PROVISÕES</span> </div>
-            <div class="cell cell width-85">   <input type="number" name="attr_provisoes" min="0" max="20" value="20"></div>
-
-        </div>
-
-        <div class="lines">&nbsp;</div>
-
-        <div class="lines">
-
-            <div class="cell valign width-90"> <span>TOCHAS</span> </div>
-            <div class="cell"> <input type="number" name="attr_tochas" min="0" max="10" value="10"></div>
-
-        </div>
-    
-    </div>
-
-    <div class="cell">
-        <div class="lines">
-            <div class="banner image"><label>DADOS</label></div>
-            <div class="cell valign">
-                <div class="cell width-60"><input type='number' name="attr_dados" value="1" min="1"></div>
-                <div class="cell width-70"><span>dados &nbsp;&nbsp;&nbsp;+ </span></div>
-                <div class="cell width-60"><input type="number" name="attr_modificador" value="0"></div>
-                <div class="cell"><button type='roll' name="roll_btnDados" class="" value="/r @{dados}d6sd+@{modificador}" ></button></div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-<div class="lines">
-
-    <div class="cell width-60"></div>
-
-
-</div>
-
 
 <hr>
 
 
-<div class="lines">
 
-    
-    <div class="cell width-310">
-        <div class="lines"><label>EQUIPAMENTOS</label></div>
+<div class="essence-grid">
+	<div class="essence-header"> STRENGTH </div>
+	<div class="essence-header"> SPEED </div>
+	<div class="essence-header"> SMARTS </div>
+	<div class="essence-header"> SOCIAL </div>
+	<!-- STRENGTH ESSENCE COLUMN -->
+	<div id="strength-column" class="essence-coulmn-grid">
+		<!-- Toughness score + Essence D-->
+		<div class="skill-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="toughness-score" class="text-padding-none">Toughness</label>
+			</div>
+			<input type="text" id="toughness-score" name="attr_toughness" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<div class="essence-defense-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="strength-essence" class ="text-size-small text-padding-none">Essence</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="strength-armour" class ="text-size-small text-padding-none">Armour</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="strength-modifier" class ="text-size-small text-padding-none">Modifier</label>
+			</div>
+			<input type="text" id="strength-essence" name="attr_strength" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="strength-armour" name="attr_strength-armour" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="strength-modifier" name="attr_strength-modifier" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<!-- ATHLETICS SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="athletics" class="text-size-small text-padding-none">Athletics</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="athletics" name="attr_athletics-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_athletics-spec" placeholder="Athletics Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- BRAWN SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="brawn" class="text-size-small text-padding-none">Brawn</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="brawn" name="attr_brawn-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_brawn-spec" placeholder="Brawn Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- CONDITIONING SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name text-size-small">
+				<label for="conditioning-die" class="text-size-small text-padding-none">Conditioning</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="conditioning-die" name="attr_conditioning-die" class="die-dropdown">
+					<option value="0">0</option>
+					<option value="1">+1</option>
+					<option value="2">+2</option>
+					<option value="3">+3</option>
+					<option value="4">+4</option>
+					<option value="5">+5</option>
+					<option value="6">+6</option>
+				</select> 
+			</div>
+		</div>
+		<!-- INTIMIDATION SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="imtimidation" class="text-size-small text-padding-none">Intimidation</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="imtimidation" name="attr_imtimidation-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_imtimidation-spec" placeholder="Imtimidation Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- MIGHT SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="might" class="text-size-small text-padding-none">Might</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="might" name="attr_might-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_might-spec" placeholder="Might Specialization" class="skill-grid-element specialization-box">
+		</div>
+	</div>
+	<!-- SPEED ESSECNE COLUMN-->
+	<div id="speed-column" class="essence-coulmn-grid">
+		<!-- Evasion score + Essence D-->
+		<div class="skill-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="evasion-score" class="text-padding-none">Evasion</label>
+			</div>
+			<input type="text" id="evasion-score" name="attr_evasion" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<div class="essence-defense-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="speed-essence" class ="text-size-small text-padding-none">Essence</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="speed-armour" class ="text-size-small text-padding-none">Armour</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="speed-modifier" class ="text-size-small text-padding-none">Modifier</label>
+			</div>
+			<input type="text" id="speed-essence" name="attr_speed" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="speed-armour" name="attr_speed-armour" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="speed-modifier" name="attr_speed-modifier" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<!--ACROBATICS SKILL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="acrobatics" class="text-size-small text-padding-none">Acrobatics</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="acrobatics" name="attr_acrobatics-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_acrobatics-spec" placeholder="Acrobatics Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- DRIVING SKILL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="driving" class="text-size-small text-padding-none">Driving</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="driving" name="attr_driving-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_driving-spec" placeholder="Driving Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- FINESSE SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="finesse" class="text-size-small text-padding-none">Finesse</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="finesse" name="attr_finesse-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_finesse-spec" placeholder="Finesse Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- INFILTRAION SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="infiltration" class="text-size-small text-padding-none">Infiltration</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="infiltration" name="attr_infiltration-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_infiltration-spec" placeholder="Infiltration Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- INITIATIVE SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name text-size-small">
+				<label for="initiative-die" class="text-size-small text-padding-none">Conditioning</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="initiative-die" name="attr_initiative-die" class="die-dropdown">
+					<option value="0">0</option>
+					<option value="1">+1</option>
+					<option value="2">+2</option>
+					<option value="3">+3</option>
+					<option value="4">+4</option>
+					<option value="5">+5</option>
+					<option value="6">+6</option>
+				</select> 
+			</div>
+		</div>
+		<!-- TARGETING SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="targeting" class="text-size-small text-padding-none">Targeting</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="targeting" name="attrtargeting-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_targetingn-spec" placeholder="Targeting Specialization" class="skill-grid-element specialization-box">
+		</div>
+	</div>
+	<!-- SMARTS ESSECNE COLUMN-->
+	<div id="smarts-column" class="essence-coulmn-grid">
+		<!-- Willpower score + Essence D-->
+		<div class="skill-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="willpower-score" class="text-padding-none">Willpower</label>
+			</div>
+			<input type="text" id="willpower-score" name="attr_willpower" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<div class="essence-defense-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="smarts-essence" class ="text-size-small text-padding-none">Essence</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="smarts-armour" class ="text-size-small text-padding-none">Armour</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="smarts-modifier" class ="text-size-small text-padding-none">Modifier</label>
+			</div>
+			<input type="text" id="smarts-essence" name="attr_smarts" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="smarts-armour" name="attr_smarts-armour" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="smarts-modifier" name="attr_smarts-modifier" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<!-- ALERTNESS SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="alertness" class="text-size-small text-padding-none">Alertness</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="alertness" name="attr_alertness-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_alertness-spec" placeholder="Alertness Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- CULTURE SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="culture" class="text-size-small text-padding-none">Culture</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="culture" name="attr_culture-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_culture-spec" placeholder="Culture Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- SCIENCE SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="science" class="text-size-small text-padding-none">Science</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="science" name="attr_science-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_science-spec" placeholder="Science Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- SURVIVAL SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="survival" class="text-size-small text-padding-none">Survival</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="survival" name="attr_survival-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_survival-spec" placeholder="Survival Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- TECHNOLOGY SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="technology" class="text-size-small text-padding-none">Technology</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="technology" name="attr_technology-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_technology-spec" placeholder="Technology Specialization" class="skill-grid-element specialization-box">
+		</div>
+	</div>
+	<!-- SOCIAL ESSECNE COLUMN-->
+	<div id="social-column" class="essence-coulmn-grid">
+		<!-- Cleverness score + Essence D-->
+		<div class="skill-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="willpower-score" class="text-padding-none">Cleverness</label>
+			</div>
+			<input type="text" id="cleverness-score" name="attr_cleverness" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<div class="essence-defense-grid">
+			<div class="skill-grid-element specialization-name">
+				<label for="social-essence" class ="text-size-small text-padding-none">Essence</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="social-armour" class ="text-size-small text-padding-none">Armour</label>
+			</div>
+			<div class="skill-grid-element specialization-name">
+				<label for="social-modifier" class ="text-size-small text-padding-none">Modifier</label>
+			</div>
+			<input type="text" id="social-essence" name="attr_social" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="social-armour" name="attr_social-armour" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<input type="text" id="social-modifier" name="attr_social-modifier" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+		</div>
+		<!-- ANIMAL HANDLING SKILL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="animal-handling" class="text-size-small text-padding-none">Animal Handling</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="animal-handling" name="attr_animal-handling-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_animal-handling-spec" placeholder="Animal Handling Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- DECEPTION SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="deception" class="text-size-small text-padding-none">Deception</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="deception" name="attr_deception-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_deception-spec" placeholder="Deception Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- PERFORMANCE SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="performance" class="text-size-small text-padding-none">Performance</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="performance" name="attr_performance-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_performance-spec" placeholder="Performance Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- PERSUASION SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="persuasion" class="text-size-small text-padding-none">Persuasion</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="persuasion" name="attr_persuasion-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_persuasion-spec" placeholder="Persuasion Specialization" class="skill-grid-element specialization-box">
+		</div>
+		<!-- STREETWISE SKIL-->
+		<div class="skill-grid skill-grid-border">
+			<div class="skill-grid-element specialization-name">
+				<label for="streetwise" class="text-size-small text-padding-none">Streetwise</label>
+			</div>
+			<div class="skill-grid-element">
+				<select id="streetwise" name="attr_streetwise-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select> 
+			</div>
+			<input type="text" name="attr_streetwise-spec" placeholder="Streetwise Specialization" class="skill-grid-element specialization-box">
+		</div>
+	</div>
+</div>
 
-        <div class="lines">
-            <div class="cell width-100">
-                <span>ARMA</span>
-            </div>
-            <div class="cell">
-                <input type="text" name="attr_arma">
-            </div>
-        </div>
+<!-- TEMPLATES-->
+<hr>
+<div>
+<!-- Skill with specializations template-->
+<div class="skill-grid skill-grid-border item-width-test">
+	<div class="skill-grid-element specialization-name">
+		<label for="die-dropdown" class="text-size-small text-padding-none">Animal Handling</label>
+	</div>
+	<div class="skill-grid-element">
+		<select id="die-dropdown" class="die-dropdown">
+			<option value="d0">0</option>
+			<option value="d2">d2</option>
+			<option value="d4">d4</option>
+			<option value="d6">d6</option>
+			<option value="d8">d8</option>
+			<option value="d10">d10</option>
+			<option value="d12">d12</option>
+		</select> 
+	</div>
+	<input type="text" placeholder="Test 1" class="skill-grid-element specialization-box">
+</div>
 
-        <div class="lines">
-            <div class="cell width-100">
-                <span>CABEÇA</span>
-            </div>
-            <div class="cell">
-                <input type="text" name="attr_cabeca">
-            </div>
-        </div>
-
-        <div class="lines">
-            <div class="cell width-100">
-                <span>PEITORAL</span>
-            </div>
-            <div class="cell">
-                <input type="text" name="attr_peitoral">
-            </div>
-        </div>
-
-        <div class="lines">
-            <div class="cell width-100">
-                <span>OMBREIRAS</span>
-            </div>
-            <div class="cell">
-                <input type="text" name="attr_ombreiras">
-            </div>
-        </div>
-
-        <div class="lines">
-            <div class="cell width-100">
-                <span>BRACELETES</span>
-            </div>
-            <div class="cell">
-                <input type="text" name="attr_braceletes">
-            </div>
-        </div>
-
-        <div class="lines">
-            <div class="cell width-100">
-                <span>BOTAS</span>
-            </div>
-            <div class="cell">
-                <input type="text" name="attr_botas">
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="lines"><label>MOCHILA</label></div>
-        
-        <div class="lines">
-            <fieldset class="repeating_mochila">
-                <input type="text" name="attr_item" class="width-255">
-                <input type="number" name="attr_itemQtd">
-            </fieldset>
-        </div>
-
-        <hr>
-        
-        <div class="lines"><label>MAGIAS</label></div>
-
-        <div class="lines">
-
-            <div class="lines">
-                <div class="cell width-260"><span>MAGIAS</span></div>
-                <div class="cell width-50"><span>QTD</span></div>
-            </div>
-
-            <fieldset class="repeating_magias">
-
-                <div class="lines">
-                    <input type="text"   name="attr_magia"  class="width-255">
-                    <input type="number" name="attr_magiaQtd" value="0" min="0">
-                </div>
-
-                <div class="lines">
-                    <textarea name="attr_magiaUso" name="attr_magiaEfeito" class="width-295" placeholder="EFEITO"></textarea>
-                </div>
-
-             </fieldset>
-        
-        </div>
-        
-
-    </div>
-
-    <div class="cell width-50"></div>
-
-    <div class="cell">
-        <div class="lines"><label>MONSTROS</label></div>
-
-        <div class="cell width-180">
-            <div class="lines"><span>MONSTRO</span></div>
-        </div>
-        <div class="cell width-50">
-            <div class="lines"><span>PV</span></div>
-        </div>
-        <div class="cell width-100">
-            <div class="lines"><span>DANO</span></div>
-        </div>
-        <div class="cell">
-            <div class="lines"><span>ESPECIAL</span></div>
-        </div>
-
-
-        <fieldset class="repeating_mostro">
-            <div class="cell">
-                <div class="lines"><input type="text"   name="attr_monstro" class="width-180"></div>
-            </div>
-            <div class="cell">
-                <div class="lines"><input type="number" name="attr_monstroPv" class="width-50"  min="0" value="0"></div>
-            </div>
-            <div class="cell">
-                <div class="lines"><input type="text"   name="attr_monstroDano" class="width-100"></div>
-            </div>
-            <div class="cell">
-                <div class="lines"><input type="text"   name="attr_monstroEspecial" class="width-150"></div>
-            </div>
-        </fieldset>
-    </div>
+<hr>
+<!--Skill without specializations template-->
+<div class="skill-grid skill-grid-border item-width-test">
+	<div class="skill-grid-element specialization-name text-size-small">
+		<label for="die-dropdown" class="text-padding-none">Initiative</label>
+	</div>
+	<div class="skill-grid-element">
+		<select id="die-dropdown" class=" die-dropdown">
+			<option value="d0">0</option>
+			<option value="d2">d2</option>
+			<option value="d4">d4</option>
+			<option value="d6">d6</option>
+			<option value="d8">d8</option>
+			<option value="d10">d10</option>
+			<option value="d12">d12</option>
+		</select> 
+	</div>
 </div>
 
 
-<rolltemplate class="sheet-rolltemplate-moveDesc">
-    <div class="sheet-container sheet-color-{{color}}">
-        <div class="sheet-header">
-        {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-        {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-        </div>
-        <div class="sheet-content sheet-color-text-{{colorText}}">
-        {{#allprops() title subtitle color colorText dados}}
-            <div class="sheet-desc">{{value}}</div>
-        {{/allprops() title subtitle color colorText dados}}
-        </div>
-    </div>
-</rolltemplate>
-
-
-
-<rolltemplate class="sheet-rolltemplate-custom">
-    <div class="sheet-container sheet-color-{{color}}">
-        <div class="sheet-header">
-        {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-        {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-        </div>
-        <div class="sheet-content sheet-color-text-{{colorText}}">
-            <div class="sheet-key">dados</div>
-            {{#dados}}<div class="sheet-value">{{dados}}</div>{{/dados}}
-        {{#allprops() title subtitle color colorText dados}}
-            <div class="sheet-desc">{{value}}</div>
-        {{/allprops() title subtitle color colorText dados}}
-        </div>
-    </div>
-</rolltemplate>
-
-
-<script type="text/worker">
-
-var matrixRaca = [];
-
-var obj = {
-    raca: "Homem-Gosma",
-    pv: 10,
-    vantagem: "Se engolfar o corpo de um inimigo morto recupera todos PV."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Vagalóide",
-    pv: 16,
-    vantagem: "Começa o jogo com 3 usos da Magia Básica: Luz."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Fada",
-    pv: 8,
-    vantagem: "Começa o jogo com 5 Magias Básicas aleatórias."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Gnomo",
-    pv: 10,
-    vantagem: "Começa o jogo com 3 Magias Básicas aleatórias."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Elfo",
-    pv: 16,
-    vantagem: "Começa o jogo com 1 Magia Básica aleatória."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Humano",
-    pv: 16,
-    vantagem: "Começa o jogo com 1 Magia Básica aleatória."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Elfo",
-    pv: 20,
-    vantagem: "Nenhuma."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Anão",
-    pv: 18,
-    vantagem: "Quando for rolar para Achar Passagens Secretas, role dois dados e descarte o menor."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Pequenino",
-    pv: 14,
-    vantagem: "Quando Mover em Silêncio, para cada monstro role dois dados e descarte o menor."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Povo-Gato",
-    pv: 19,
-    vantagem: "Pode vender equipamento na cidade pelo dobro do valor."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Rinoceróide",
-    pv: 24,
-    vantagem: "Pode atacar com seu chifre (Dano 1d6) em vez de atacar com uma arma."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Meio-Dragão",
-    pv: 30,
-    vantagem: "Começa o jogo com 3 usos da Magia Básica: Bola de Fogo."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Meio-Humano",
-    pv: 20,
-    vantagem: "Role uma nova raça e use a vantagem deste."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Samambro",
-    pv: 10,
-    vantagem: "Quando morrer, role um dado. Se cair 3 ou mais irá voltar a vida com 1 PV."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Corvino",
-    pv: 14,
-    vantagem: "Começa o jogo com 2 Magias Avançadas e pode ignorar eventos na viagem."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Patovsky",
-    pv: 15,
-    vantagem: "Pode andar em territórios de água e pode ignorar eventos na viagem."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Pandakhan",
-    pv: 30,
-    vantagem: "Gasta o dobro de provisões."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Sharkin",
-    pv: 18,
-    vantagem: "Pode andar em territórios de água."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Goblin",
-    pv: 3,
-    vantagem: "Se rolar 1 no dado de dano você explode causando 5 de dano em todos da sala."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Orc",
-    pv: 21,
-    vantagem: "Nenhuma"
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Centauro",
-    pv: 19,
-    vantagem: "Gasta metade de provisões ao se mover no mapa."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Fungóide",
-    pv: 10,
-    vantagem: "A qualquer momento, gaste 1 provisão e recupere 1d6 Pontos de Vida."
-}
-matrixRaca.push(obj);
-
-var obj = {
-    raca: "Ogro",
-    pv: 40,
-    vantagem: "Não pode usar poções, pergaminhos ou vestir armadura. Causa +2 de Dano."
-}
-matrixRaca.push(obj);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var matrixClasse = [];
-
-var obj = {
-    classe: "Mendigo",
-    pv: 4,
-    vantagem: "Nenhuma",
-    equipamento: "Pedaço de Pau (Dano 1d6-2)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Coveiro",
-    pv: 2,
-    vantagem: "Causa +2 de dano em Mortos-Vivos.",
-    equipamento: "Pá (Dano 1d6-1)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Nobre",
-    pv: 0,
-    vantagem: "Começa o jogo com 1 Magia Básica aleatórias.",
-    equipamento: "Rapieira (Dano 1d6+1)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Estudante",
-    pv: 0,
-    vantagem: "Começa o jogo com 3 Magias Básicas aleatórias.",
-    equipamento: "Adaga (Dano 1d6-1)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Ferreiro",
-    pv: 4,
-    vantagem: "Pode recuperar armaduras gastando 1 Tocha.",
-    equipamento: "Martelo (Dano 1d6)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Guarda",
-    pv: 4,
-    vantagem: "Nenhuma.",
-    equipamento: "Espada Curta (Dano 1d6)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Cozinheiro",
-    pv: 2,
-    vantagem: "Ganha 1 Provisão por monstro (que não seja morto-vivo)",
-    equipamento: "Cutelo (Dano 1d6)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Chaveiro", 
-    pv: 2,
-    vantagem: "Não gasta tochas quando Abrir Fechaduras",
-    equipamento: "Adaga (Dano 1d6-1)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Lenhador",
-    pv: 4,
-    vantagem: "Quando destruir portas, role o dado. Se cair 6 ganha 1 tocha.",
-    equipamento: "Machado (Dano 1d6)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Minerador",
-    pv: 4,
-    vantagem: "Se acabar as tochas pode sair caso tenha caminho livre.",
-    equipamento: "Picareta (Dano 1d6-1)"
-}
-matrixClasse.push(obj);
-
-var obj = {
-    classe: "Gladiador",
-    pv: 4,
-    vantagem: "Nenhuma",
-    equipamento: "Espada Curta (Dano 1d6)"
-}
-matrixClasse.push(obj);
-
-
-on("clicked:btnRaca", function(eventInfo){
-
-    var x = randomInteger(matrixRaca.length) - 1;
-
-    var raca = matrixRaca[x];
-
-    setAttrs({
-        "raca" : raca.raca,
-        "racaVantagem" : "PV: " + raca.pv + "\n" + raca.vantagem       
-    });
-
-});
-
-on("clicked:repeating_class", function(eventInfo) {
-
-    console.log(eventInfo);
-
-    var x = randomInteger(matrixClasse.length) - 1;
-
-    var classe = matrixClasse[x];
-
-    setAttrs({
-        "repeating_class_classe" : classe.classe,
-        "repeating_class_classeVantagem" : "PV: " + classe.pv + "\n" + classe.vantagem   
-    });
-
-});
-
-
-function randomInteger(max){
-    return Math.floor(Math.random() * max) + 1;
-}
-
-</script>
-
-
+<hr>
+<!-- Skill defense template -->
+<div class="skill-grid item-width-test">
+	<div class="skill-grid-element specialization-name">
+		<label for="toughness-score" class="text-padding-none">Toughness</label>
+	</div>
+	<input type="text" id="toughness-score" placeholder="Iz" class="skill-grid-element two-char-text-box" maxlength="2">
+</div>
+
+<hr>
+<!-- Essence scores example -->
+<div class="essence-defense-grid item-width-test">
+	<div class="skill-grid-element specialization-name">
+		<label for"izzy-score" class ="text-size-small text-padding-none">Essence</label>
+	</div>
+	<div class="skill-grid-element specialization-name">
+		<label for"izzy-score" class ="text-size-small text-padding-none">Armour</label>
+	</div>
+	<div class="skill-grid-element specialization-name">
+		<label for"izzy-score" class ="text-size-small text-padding-none">Modifier</label>
+	</div>
+	<input type="text" placeholder="zy" class="skill-grid-element two-char-text-box" maxlength="2">
+	<input type="text" placeholder="Mo" class="skill-grid-element two-char-text-box" maxlength="2">
+	<input type="text" placeholder="on" class="skill-grid-element two-char-text-box" maxlength="2">
+</div>
+</div>
+
+</div>
 
