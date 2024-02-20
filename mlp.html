@@ -1,84 +1,89 @@
-
 <div id="the-whole-enchilada">
 
-
-
-
-
-
-<div class="row">
-	<div class="column">
-		Name
-		<div class="cell"><input type="text" name="attr_character_name"></div>
-		Origin
-		<div class="cell"><input type="text" name="attr_origin"></div>
+<!-- Header has basic character info, and logo-->
+<div class="mlp-sheet-header">
+	<img src="https://github.com/TerryEunice/PeterCharSheet/blob/main/banner2.png?raw=true" width="150">
+	<div> 
+		<label>Name</label>
+		<input type="text" name="attr_character_name" class="input-width">
 	</div>
-	<div class="image column">
-		<!-- <img src="https://github.com/TerryEunice/PeterCharSheet/blob/main/banner.png?raw=true" width="250"> -->
-		<img name="attr_character_avatar">
+	<div>
+		<label>Pronouns</label>
+		<input type="text" name="attr_pronoun" class="input-width">
 	</div>
-	<div class="column">
-		Pronouns
-		<div class="cell"><input type="text" name="attr_pronoun" class="die-dropdown-size"></div>
-		Role
-		<div class="cell"><input type="text" name="attr_role"></div>
+	<div>
+		<label>Origin</label>
+		<input type="text" name="attr_origin" class="input-width">
 	</div>
-</div>
-
-<div class="row">
-	<div class="column">
-		Description
-		<div class="cell">
-			<textarea name="attr_desrciption" cols="10" rows="1" class="sheet-text-area test34"></textarea>
-		</div>
+	<div>
+		<label>Role</label>
+		<input type="text" name="attr_role" class="input-width">
 	</div>
-	<div class="column">
-		Languages
-		<div class="cell"><input type="text" name="attr_language" class="test34"></div>
-	</div>
-	<div class="column">
-		Movement
-		<div class="cell"><input type="text" name="attr_movement"></div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="column">
-		<div class="row">
-			<div class="column">
-				Influences
-				<div class="cell"><input type="text" name="attr_influences"></div>
-			</div>
-			<div class="column">
-				Friendship Points
-				<div class="cell"><input type="text" name="attr_freidnship"></div>
-			</div>
-			<div class="column">
-				Wealth Status
-				<div class="cell"><input type="text" name="attr_money"></div>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="column">
-				Hang-ups
-				<div class="cell"><input type="text" name="attr_hang-up"></div>
-			</div>
-			<div class="column">
-				Health
-				<div class="cell"><input type="text" name="attr_health"></div>
-			</div>
-		</div>
-	</div>
-	<div class="column">
-		Attack
+	<div>
+		<label>Level</label>
+		<input type="text" name="attr_level" class="input-width">
 	</div>
 </div>
 
 <hr>
 
+<!--Portrait and mid prioirty biographical info -->
+<div class="mlp-sheet-basic-info">
+	<img name="attr_character_avatar" class="mlp-sheet-basic-info-photo" width="180">
+	<div class="mlp-sheet-basic-info-desc test-border mlp-sheet-padding">
+		<label for="char-desc" class="text-margin-none">Description</label>
+		<textarea id="char_desc" name="attr_char_desc">
+	</div>
+	<div class="test-border mlp-sheet-padding"> 
+		<label for="influences" class="text-margin-none">Influences</label>
+		<textarea id="influences" name="attr_influences">
+	</div>
+	<div class="test-border mlp-sheet-padding">
+		<label for="hang-ups" class="text-margin-none">Hang Ups</label>
+		<textarea id="hang-ups" name="attr_hang-ups">
+	</div>
+	<!-- Health -->
+	<div class="test-border mlp-sheet-padding">
+		<label class="text-margin-none">Health</label>
+		<div class="health-movement-grid">
+			<label class ="text-size-small text-padding-none text-margin-none">Current</label>
+			<label class ="text-size-small text-padding-none text-margin-none">Max</label>
+			<input type="text" name="attr_current-health" class="two-char-text-box">
+			<input type="text" name="attr_max-health" class="two-char-text-box">
+		</div>
+	</div>
+	<!-- Movement -->
+	<div class="test-border mlp-sheet-padding">
+		<label class="text-margin-none">Movement</label>
+		<div class="health-movement-grid">
+			<label for="ground-movement" class ="text-size-small text-padding-none text-margin-none">Ground</label>
+			<label for="air-movement" class ="text-size-small text-padding-none text-margin-none">Air</label>
+			<input type="text" id="ground-movement" name="attr_movement-ground" class="two-char-text-box">
+			<input type="text" id="air_movement" name="attr_movement-air" class="two-char-text-box">
+		</div>
+	</div>
+	<!-- Wealth -->
+	<div class="test-border mlp-sheet-padding">
+		<label class="text-margin-none">Wealth</label>
+		<select id="wealth" name="attr_wealth-die" class="die-dropdown">
+			<option value="d0">0</option>
+			<option value="d2">d2</option>
+			<option value="d4">d4</option>
+			<option value="d6">d6</option>
+			<option value="d8">d8</option>
+			<option value="d10">d10</option>
+			<option value="d12">d12</option>
+		</select> 
+	</div>
+	<!-- Friendship Points -->
+	<div class="test-border mlp-sheet-padding">
+		<label class="text-margin-none">Friendship Points</label>
+		<input type="text" name="attr_friendship" class="two-char-text-box">
+	</div>
+</div>
 
-
+<br>
+<!-- Essence Grid -->
 <div class="essence-grid">
 	<div class="essence-header"> STRENGTH </div>
 	<div class="essence-header"> SPEED </div>
@@ -556,75 +561,6 @@
 			<input type="text" name="attr_streetwise-spec" placeholder="Streetwise Specialization" class="skill-grid-element specialization-box">
 		</div>
 	</div>
-</div>
-
-<!-- TEMPLATES-->
-<hr>
-<div>
-<!-- Skill with specializations template-->
-<div class="skill-grid skill-grid-border item-width-test">
-	<div class="skill-grid-element specialization-name">
-		<label for="die-dropdown" class="text-size-small text-padding-none">Animal Handling</label>
-	</div>
-	<div class="skill-grid-element">
-		<select id="die-dropdown" class="die-dropdown">
-			<option value="d0">0</option>
-			<option value="d2">d2</option>
-			<option value="d4">d4</option>
-			<option value="d6">d6</option>
-			<option value="d8">d8</option>
-			<option value="d10">d10</option>
-			<option value="d12">d12</option>
-		</select> 
-	</div>
-	<input type="text" placeholder="Test 1" class="skill-grid-element specialization-box">
-</div>
-
-<hr>
-<!--Skill without specializations template-->
-<div class="skill-grid skill-grid-border item-width-test">
-	<div class="skill-grid-element specialization-name text-size-small">
-		<label for="die-dropdown" class="text-padding-none">Initiative</label>
-	</div>
-	<div class="skill-grid-element">
-		<select id="die-dropdown" class=" die-dropdown">
-			<option value="d0">0</option>
-			<option value="d2">d2</option>
-			<option value="d4">d4</option>
-			<option value="d6">d6</option>
-			<option value="d8">d8</option>
-			<option value="d10">d10</option>
-			<option value="d12">d12</option>
-		</select> 
-	</div>
-</div>
-
-
-<hr>
-<!-- Skill defense template -->
-<div class="skill-grid item-width-test">
-	<div class="skill-grid-element specialization-name">
-		<label for="toughness-score" class="text-padding-none">Toughness</label>
-	</div>
-	<input type="text" id="toughness-score" placeholder="Iz" class="skill-grid-element two-char-text-box" maxlength="2">
-</div>
-
-<hr>
-<!-- Essence scores example -->
-<div class="essence-defense-grid item-width-test">
-	<div class="skill-grid-element specialization-name">
-		<label for"izzy-score" class ="text-size-small text-padding-none">Essence</label>
-	</div>
-	<div class="skill-grid-element specialization-name">
-		<label for"izzy-score" class ="text-size-small text-padding-none">Armour</label>
-	</div>
-	<div class="skill-grid-element specialization-name">
-		<label for"izzy-score" class ="text-size-small text-padding-none">Modifier</label>
-	</div>
-	<input type="text" placeholder="zy" class="skill-grid-element two-char-text-box" maxlength="2">
-	<input type="text" placeholder="Mo" class="skill-grid-element two-char-text-box" maxlength="2">
-	<input type="text" placeholder="on" class="skill-grid-element two-char-text-box" maxlength="2">
-</div>
 </div>
 
 </div>

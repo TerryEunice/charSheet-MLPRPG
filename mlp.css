@@ -1,60 +1,45 @@
 
 
-
-
-.charsheet .lines{
-  display: block;
-}
-
-.charsheet .cell{
-  display: table-cell;
-}
-
-.charsheet .valign{
-  vertical-align: middle;
-}
-
-.charsheet .top{
-  vertical-align:top;
-}
-
-.charsheet span{
-  font-weight: bold;
-}
-
-.centre{  
-  text-align: center;
-}
-
-.left {
-  text-align: left;
-}
-
-.row {
-  display: table;
-  color: blue;
-  clear: both;
-}
-
-.column {
-  float: left;
-  padding: 10px;
-}
-
-.charsheet .rowitem {
-  display: inline-block;
-}
-
-
-
-
 /*GNU/CODE*/
+#the-whole-enchilada textarea {
+	resize: none;
+	width: 90%;
+	height: 55px;
+	margin-bottom: 0px;
+}
+
+#the-whole-enchilada {
+	width: 800px;
+	box-sizing: border-box;
+}
+	
+#the-whole-enchilada .text-size-small {
+    font-size: 12px;
+}
+
+#the-whole-enchilada .text-size-14 {
+	font-size: 14px;
+}
+
+#the-whole-enchilada .text-padding-none {
+	padding-right: 0px;
+}
+
+#the-whole-enchilada .text-margin-none {
+	margin: 0px;
+}
+
+.roll-20-default-label-size {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 .sheet-white-text {
 	color: white;
 }
 
 .sheet-font-big{
-	font-size:30px;
+	font-size:20px;
 }
 
 .sheet-text-area {
@@ -68,18 +53,6 @@
 .centered-text {
 	text-align: center;
 	color: blue;
-}
-
-#the-whole-enchilada .text-size-small {
-    font-size: 12px;
-}
-
-#the-whole-enchilada .text-size-14 {
-	font-size: 14px;
-}
-
-#the-whole-enchilada .text-padding-none {
-	padding-right: 0px;
 }
 
 .die-dropdown {
@@ -168,7 +141,7 @@
 
 .essence-header {
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 	color: white;
 	background: purple;
@@ -176,4 +149,48 @@
 }
 
 /*Sheet header*/
+.mlp-sheet-header {
+	display: flex;
+	flex: 1 1 auto;
+	gap: 5px;
+	border: 3px solid #371e58;
+}
 
+/*Sheet middle piece*/
+.mlp-sheet-basic-info {
+	display: grid;
+	grid-template-rows: 1fr, 1fr;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.mlp-sheet-basic-info-photo {
+	grid-row: 1 / 3;
+}
+
+.mlp-sheet-basic-info-desc {
+	grid-column: 2 / 4;
+}
+
+.mlp-sheet-padding {
+	padding: 3px;
+}
+
+.mlp-sheet-border-box-sizing {
+	box-sizing: border-box;
+}
+
+/*Grid for health and movement boxes*/
+.health-movement-grid {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+}
+
+.input-width {
+	width: 90%;
+}
+
+.test-border {
+	border: 1px solid #371e58;
+}
