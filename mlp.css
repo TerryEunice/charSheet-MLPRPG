@@ -132,8 +132,6 @@
 .essence-grid {
 	display: grid;
 	grid-template-columns: repeat(4,1fr);
-	grid-template-rows: 10% 90%;
-	
 	justify-content: center;
 	grid-gap: 5px; /*Put some space in between the grid lines*/
 	padding: 5px;
