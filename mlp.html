@@ -65,15 +65,18 @@
 	<!-- Wealth -->
 	<div class="test-border mlp-sheet-padding">
 		<label class="text-margin-none">Wealth</label>
-		<select id="wealth" name="attr_wealth-die" class="die-dropdown">
-			<option value="d0">0</option>
-			<option value="d2">d2</option>
-			<option value="d4">d4</option>
-			<option value="d6">d6</option>
-			<option value="d8">d8</option>
-			<option value="d10">d10</option>
-			<option value="d12">d12</option>
-		</select> 
+		<div class="basic-flex-box">
+			<select id="wealth" name="attr_wealth-die" class="die-dropdown">
+				<option value="d0">0</option>
+				<option value="d2">d2</option>
+				<option value="d4">d4</option>
+				<option value="d6">d6</option>
+				<option value="d8">d8</option>
+				<option value="d10">d10</option>
+				<option value="d12">d12</option>
+			</select> 
+			<button type="action" name="act_wealth-roll" class="text-size-small">Roll Wealth</button>
+		</div>
 	</div>
 	<!-- Friendship Points -->
 	<div class="test-border mlp-sheet-padding">
@@ -596,6 +599,7 @@
 				<option value="d10">d10</option>
 				<option value="d12">d12</option>
 			</select>
+			<button type="action" name="act_spellcasting-roll" class="text-size-small">Roll Spell</button>
 		</div>
 		<fieldset class="repeating_spells">
 			<div class="basic-flex-box vertical-flex padding-5-px inner-grid-item-border-background">
@@ -623,6 +627,7 @@
 					<input type="text" name="attr_spell-duration" class="two-char-text-box">
 					Range 
 					<input type="text" name="attr_spell-range" class="two-char-text-box">
+					
 				</div>
 				<div class="basic-flex-box vertical-flex">
 					Description
@@ -984,5 +989,16 @@
 	on('clicked:streetwise-roll', async (info) => 
 	{
 		skill_die_roll("streetwise-die");
+    });
+	
+	/*Misc*/
+	on('clicked:spellcasting-roll', async (info) => 
+	{
+		skill_die_roll("spellcasting-die");
+    });
+	
+	on('clicked:wealth-roll', async (info) => 
+	{
+		skill_die_roll("wealth-die");
     });
 </script>
