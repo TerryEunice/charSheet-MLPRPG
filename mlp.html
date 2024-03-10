@@ -679,26 +679,26 @@
 
 <rolltemplate class="sheet-rolltemplate-skill-die">
     <div class="sheet-template-container">
-        <h1>{{name}}</h1>
+        <h3>{{roll-type}}</h3>
         <div class="sheet-results">
 			<!--Normal Display-->
 			{{#rollBetween() roll2 -1 25}}
-				<h4>D20 = {{roll1}}</h4>
-				<h4>Skill Dice = {{roll2}}</h4>
-				<h4>Result = {{computed::roll1}}</h4>
+				<h4 class="flex-items-stretch">D20 {{roll1}}</h4>
+				<h4 class="flex-items-stretch">Skill Dice {{roll2}}</h4>
+				<h4>Total {{computed::roll1}}</h4>
 			{{/rollBetween() roll2 -1 25}}
 			<!--Auto Pass/Fail Display-->
 			{{#rollBetween() roll2 29 39}}
-                <h4>Auto Pass</h4>
+                <h4 class="sheet-good-roll">Auto Pass</h4>
             {{/rollBetween() roll2 29 39}}
 			{{#rollBetween() roll2 39 49}}
-                <h4>Auto Crit</h4>
+                <h4 class="sheet-good-roll">Auto Crit</h4>
             {{/rollBetween() roll2 39 49}}
 			{{#rollTotal() roll2 -2}}
-				<h4>Auto Fail</h4>
+				<h4 class="sheet-bad-roll">Auto Fail</h4>
 			{{/rollTotal() roll2 -2}}			
 			{{#rollTotal() roll2 -4}}
-				<h4>Auto Fumble</h4>
+				<h4 class="sheet-bad-roll">Auto Fumble</h4>
 			{{/rollTotal() roll2 -4}}
         </div>
     </div>
@@ -733,7 +733,8 @@
 	const die_shift_string_d10 =  "!{{upshift=[[?{Up/Down Shift?|No Shift, 10|-7 (Auto Fumble), -2|-6 (Auto Fail), -1|-5 (base die), 0|-4 (d2), 2|-3 (d4), 4|-2 (d6), 6|-1 (d8), d8|+1 (d12), 12|+2 (2d8), 13|+3 (3d6), 14|+4 (Auto Success), 15|+5 (Auto Crit), 16|}]]}}";
 	const die_shift_string_d12 =  "!{{upshift=[[?{Up/Down Shift?|No Shift, 12|-8 (Auto Fumble), -2|-7 (Auto Fail), -1|-6 (base die), 0|-5 (d2), 2|-4 (d4), 4|-3 (d6), 6|-2 (d8), d8|-1 (d10), 10|+1 (2d8), 13|+2 (3d6), 14|+3 (Auto Success), 15|+4 (Auto Crit), 16|}]]}}";
 	
-	const default_roll_string = "&{template:skill-die} {{name=Skill Die Roll}}  {{roll1=[[?{Edge/Snag?|Normal,1d20|Edge,2d20kh1|Snag,2d20kl1}]]}}";
+	const default_roll_string_start = "&{template:skill-die} {{roll-type=";
+	const default_roll_string_end = " Roll}}  {{roll1=[[?{Edge/Snag?|Normal,1d20|Edge,2d20kh1|Snag,2d20kl1}]]}}";
 	
 	function upshfit_die_query(skill_die) 
 	{
@@ -863,7 +864,7 @@
 		return skill_die_string;
 	}
 
-    function skill_die_roll(skill_to_roll)
+    function skill_die_roll(skill_to_roll, skill_name)
 	{
 		getAttrs([skill_to_roll], async (values) => 
 		{
@@ -887,7 +888,7 @@
 			
 			/*Then we can generate the final roll*/
 			let skill_die_string = create_skill_die_string(final_die_val, speced);
-			roll_string = default_roll_string + skill_die_string;
+			roll_string = default_roll_string_start + skill_name + default_roll_string_end + skill_die_string;
 
 			/*Then we pass the final roll to the roll thing*/
 			let results = await startRoll(roll_string);
@@ -906,99 +907,99 @@
 	/*Strength Roll Buttons*/
 	on('clicked:athletics-roll', async (info) => 
 	{
-		skill_die_roll("athletics-die");
+		skill_die_roll("athletics-die", "Athletics");
     });
 	on('clicked:brawn-roll', async (info) => 
 	{
-		skill_die_roll("brawn-die");
+		skill_die_roll("brawn-die", "Brawn");
     });
 	
 	on('clicked:intimidation-roll', async (info) => 
 	{
-		skill_die_roll("intimidation-die");
+		skill_die_roll("intimidation-die", "Intimidation");
     });
     on('clicked:might-roll', async (info) => 
 	{
-		skill_die_roll("might-die");
+		skill_die_roll("might-die", "Might");
     });
 	
 	/*Speed Roll Buttons*/
 	on('clicked:acrobatics-roll', async (info) => 
 	{
-		skill_die_roll("acrobatics-die");
+		skill_die_roll("acrobatics-die", "Acrobatics");
     });
 	on('clicked:driving-roll', async (info) => 
 	{
-		skill_die_roll("driving-die");
+		skill_die_roll("driving-die", "Driving");
     });
 	
 	on('clicked:finesse-roll', async (info) => 
 	{
-		skill_die_roll("finesse-die");
+		skill_die_roll("finesse-die", "Finesse");
     });
     on('clicked:infiltration-roll', async (info) => 
 	{
-		skill_die_roll("infiltration-die");
+		skill_die_roll("infiltration-die", "Infiltration");
     });
 	on('clicked:targeting-roll', async (info) => 
 	{
-		skill_die_roll("targeting-die");
+		skill_die_roll("targeting-die", "Targeting");
     });
 	
 	/*Smarts Roll Buttons*/
 	on('clicked:alertness-roll', async (info) => 
 	{
-		skill_die_roll("alertness-die");
+		skill_die_roll("alertness-die", "Alertness");
     });
 	on('clicked:culture-roll', async (info) => 
 	{
-		skill_die_roll("culture-die");
+		skill_die_roll("culture-die", "Culture");
     });
 	
 	on('clicked:science-roll', async (info) => 
 	{
-		skill_die_roll("science-die");
+		skill_die_roll("science-die", "Science");
     });
     on('clicked:survival-roll', async (info) => 
 	{
-		skill_die_roll("survival-die");
+		skill_die_roll("survival-die", "Survival");
     });
 	on('clicked:technology-roll', async (info) => 
 	{
-		skill_die_roll("technology-die");
+		skill_die_roll("technology-die", "Technology");
     });
 	
 	/*Social Roll Buttons*/
 	on('clicked:animal-handling-roll', async (info) => 
 	{
-		skill_die_roll("animal-handling-die");
+		skill_die_roll("animal-handling-die", "Animal Handling");
     });
 	on('clicked:deception-roll', async (info) => 
 	{
-		skill_die_roll("deception-die");
+		skill_die_roll("deception-die", "Deception");
     });
 	
 	on('clicked:performance-roll', async (info) => 
 	{
-		skill_die_roll("performance-die");
+		skill_die_roll("performance-die", "Performance");
     });
     on('clicked:persuasion-roll', async (info) => 
 	{
-		skill_die_roll("persuasion-die");
+		skill_die_roll("persuasion-die", "Persuasion");
     });
 	on('clicked:streetwise-roll', async (info) => 
 	{
-		skill_die_roll("streetwise-die");
+		skill_die_roll("streetwise-die", "Streetwise");
     });
 	
 	/*Misc*/
 	on('clicked:spellcasting-roll', async (info) => 
 	{
-		skill_die_roll("spellcasting-die");
+		skill_die_roll("spellcasting-die", "Spell Casting");
     });
 	
 	on('clicked:wealth-roll', async (info) => 
 	{
-		skill_die_roll("wealth-die");
+		skill_die_roll("wealth-die", "Wealth");
     });
 </script>

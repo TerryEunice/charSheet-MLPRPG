@@ -242,3 +242,34 @@
 button {
 	font-weight: bold;
 }
+
+/*Roll Template Styles*/
+.sheet-rolltemplate-skill-die h4 {
+	color: purple;
+	flex: 1 1 auto;
+}
+
+.sheet-rolltemplate-skill-die .sheet-bad-roll {
+	color: red;
+}
+
+.sheet-rolltemplate-skill-die .sheet-good-roll {
+	color: green;
+}
+
+.sheet-rolltemplate-skill-die .sheet-template-container {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	border: 2px solid #371e58;
+	border-radius: 10px;
+	background-color: #dcb3d4;	
+}
+
+.sheet-rolltemplate-skill-die .sheet-results{ 
+  border: 2px solid #371e58;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  padding: 5px;
+}
