@@ -8,6 +8,10 @@
 	margin-bottom: 0px;
 }
 
+#the-whole-enchilada label {
+	color: black;
+}
+
 #the-whole-enchilada {
 	width: 800px;
 	box-sizing: border-box;
@@ -245,8 +249,12 @@ button {
 
 /*Roll Template Styles*/
 .sheet-rolltemplate-skill-die h4 {
-	color: purple;
+	color: black;
 	flex: 1 1 auto;
+}
+
+.sheet-rolltemplate-skill-die h3 {
+	color: black;
 }
 
 .sheet-rolltemplate-skill-die .sheet-bad-roll {
