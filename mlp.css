@@ -10,6 +10,7 @@
 
 #the-whole-enchilada label {
 	color: black;
+	margin: 0px;
 }
 
 #the-whole-enchilada {
@@ -19,10 +20,6 @@
 	
 #the-whole-enchilada .text-size-small {
     font-size: 12px;
-}
-
-#the-whole-enchilada .text-size-14 {
-	font-size: 14px;
 }
 
 #the-whole-enchilada .text-padding-none {
@@ -46,10 +43,12 @@
 	margin-right: 5px;
 }
 
+/*
 .roll-20-default-label-size {
   font-weight: bold;
   font-size: 1.2em;
 }
+*/
 
 .sheet-white-text {
 	color: white;
@@ -74,13 +73,12 @@
 
 .die-dropdown {
   font-size: 10px;
-  height: 25px;
+  height: 24px;
   width: 42px;
 }
 
 #the-whole-enchilada .two-char-text-box {
 	width: 24px;
-	height: 20px;
 }
 
 /*Default input box heigh for the sheet!*/
@@ -116,13 +114,12 @@
 }
 
 .skill-grid-element {
-	height: 25px;
+	height: fit-content;
 	/*border: 1px solid red;*/
 }
 
 .specialization-name {
 	justify-self: center;
-	height: 20px;
 }
 
 .specialization-box{

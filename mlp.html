@@ -912,7 +912,7 @@
 			if(skill_to_roll === "initiative-die")
 			{
 				console.log("This is an intiative roll!");
-				let to_tracker = "!{{ total=[[" + total.toString() + "&{tracker}]]}}";
+				let to_tracker = "!{{total=[[" + total.toString() + "&{tracker}]]}}";
 				let tracker_roll = await startRoll(to_tracker);
 				finishRoll(tracker_roll.rollId);
 			}
