@@ -772,25 +772,25 @@
 	
 	function create_skill_die_string(final_die_val, is_speced)
 	{
-		let skill_die_string = "{{roll2=[[";
+		let skill_die_string;
 		
 		/*Special case for auto fail, auto pass, etc.)*/
 		switch(final_die_val)
 		{
 			case DIE_LADDER.BASE_DIE:
-				skill_die_string = skill_die_string + "0]]}}";
+				skill_die_string = "0";
 				return skill_die_string;
 			case DIE_LADDER.AUTO_FUMBLE:
-				skill_die_string = skill_die_string + "-4]]}}";
+				skill_die_string = "-4";
 				return skill_die_string;
 			case DIE_LADDER.AUTO_FAIL:
-				skill_die_string = skill_die_string + "-2]]}}";
+				skill_die_string =  "-2";
 				return skill_die_string;
 			case DIE_LADDER.AUTO_PASS:
-				skill_die_string = skill_die_string + "30]]}}";
+				skill_die_string =  "30";
 				return skill_die_string;
 			case DIE_LADDER.AUTO_CRIT:
-				skill_die_string = skill_die_string + "40]]}}";
+				skill_die_string = "40";
 				return skill_die_string;
 		}
 		
@@ -800,28 +800,28 @@
 			switch(final_die_val)
 			{
 				case DIE_LADDER.D2:
-					skill_die_string = skill_die_string + "d2]]}}";
+					skill_die_string = "d2";
 					break;
 				case DIE_LADDER.D4:
-					skill_die_string = skill_die_string + "d4]]}}";
+					skill_die_string = "d4";
 					break;
 				case DIE_LADDER.D6:
-					skill_die_string = skill_die_string + "d6]]}}";
+					skill_die_string = "d6";
 					break;
 				case DIE_LADDER.D8:
-					skill_die_string = skill_die_string + "d8]]}}";
+					skill_die_string = "d8";
 					break;
 				case DIE_LADDER.D10:
-					skill_die_string = skill_die_string + "d10]]}}";
+					skill_die_string = "d10";
 					break;
 				case DIE_LADDER.D12:
-					skill_die_string = skill_die_string + "d12]]}}";
+					skill_die_string = "d12";
 					break;
 				case DIE_LADDER.TWO_D8:
-					skill_die_string = skill_die_string + "2d8]]}}";
+					skill_die_string = "2d8";
 					break;
 				case DIE_LADDER.THREE_D6:
-					skill_die_string = skill_die_string + "3d6]]}}";
+					skill_die_string = "3d6";
 					break;
 				default:
 					console.log("Whoops, no valid die!");
@@ -833,28 +833,28 @@
 			switch(final_die_val)
 			{
 				case DIE_LADDER.D2:
-					skill_die_string = skill_die_string + "d2]]}}";
+					skill_die_string = "d2";
 					break;
 				case DIE_LADDER.D4:
-					skill_die_string = skill_die_string + "{d2,d4}kh1]]}}";
+					skill_die_string = "{d2,d4}kh1";
 					break;
 				case DIE_LADDER.D6:
-					skill_die_string = skill_die_string + "{d2,d4,d6}kh1]]}}";
+					skill_die_string = "{d2,d4,d6}kh1";
 					break;
 				case DIE_LADDER.D8:
-					skill_die_string = skill_die_string + "{d2,d4,d6,d8}kh1]]}}";
+					skill_die_string = "{d2,d4,d6,d8}kh1";
 					break;
 				case DIE_LADDER.D10:
-					skill_die_string = skill_die_string + "{d2,d4,d6,d8,d10}kh1]]}}";
+					skill_die_string = "{d2,d4,d6,d8,d10}kh1";
 					break;
 				case DIE_LADDER.D12:
-					skill_die_string = skill_die_string + "{d2,d4,d6,d8,d10,d12}kh1]]}}";
+					skill_die_string = "{d2,d4,d6,d8,d10,d12}kh1";
 					break;
 				case DIE_LADDER.TWO_D8:
-					skill_die_string = skill_die_string + "{d2,d4,d6,d8,d10,d12,2d8}kh1]]}}";
+					skill_die_string = "{d2,d4,d6,d8,d10,d12,2d8}kh1";
 					break;
 				case DIE_LADDER.THREE_D6:
-					skill_die_string = skill_die_string + "{d2,d4,d6,d8,d10,d12,2d8,3d6}kh1]]}}";
+					skill_die_string = "{d2,d4,d6,d8,d10,d12,2d8,3d6}kh1";
 					break;
 				default:
 					console.log("Whoops, no valid die!");
@@ -896,7 +896,7 @@
 			console.log("final die val is", final_die_val);
 			
 			/*Then we can generate the final roll*/
-			let skill_die_string = create_skill_die_string(final_die_val, speced);
+			let skill_die_string = "{{roll2=[[" + create_skill_die_string(final_die_val, speced) + "]]}}";
 			roll_string = default_roll_string_start + skill_name + default_roll_string_end + skill_die_string;
 
 			/*Then we pass the final roll to the roll thing*/
@@ -906,6 +906,16 @@
 			const d20_roll = results.results.roll1.result;
 			const skil_die_roll = results.results.roll2.result;
 			const total = d20_roll+skil_die_roll;
+			
+			/*Send result to tracker if initiative roll*/
+			console.log(skill_to_roll);
+			if(skill_to_roll === "initiative-die")
+			{
+				console.log("This is an intiative roll!");
+				let to_tracker = "!{{ total=[[" + total.toString() + "&{tracker}]]}}";
+				let tracker_roll = await startRoll(to_tracker);
+				finishRoll(tracker_roll.rollId);
+			}
 
 			finishRoll(results.rollId,{roll1: total});	
 		});
@@ -1014,9 +1024,6 @@
 	
 	on('clicked:initiative-roll', async (info) => 
 	{
-		let roll_string = "[[?{Edge/Snag?|Normal,1d20|Edge,2d20kh1|Snag,2d20kl1} + @{initiative-die} &{tracker}]]";
-		
-		let shift_query = await startRoll(roll_string);
-		finishRoll(shift_query.rollId);
+		skill_die_roll("initiative-die", "Initiative", true);
     });
 </script>
