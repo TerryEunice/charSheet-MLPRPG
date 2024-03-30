@@ -30,20 +30,20 @@
 <!--Portrait and mid prioirty biographical info -->
 <div class="mlp-sheet-basic-info">
 	<img name="attr_character_avatar" class="mlp-sheet-basic-info-photo" width="180">
-	<div class="mlp-sheet-basic-info-desc test-border mlp-sheet-padding">
+	<div class="mlp-sheet-basic-info-desc basic-info-border mlp-sheet-padding">
 		<label for="char-desc" class="text-margin-none">Description</label>
 		<textarea id="char_desc" name="attr_char_desc"></textarea>
 	</div>
-	<div class="test-border mlp-sheet-padding"> 
+	<div class="basic-info-border mlp-sheet-padding"> 
 		<label for="influences" class="text-margin-none">Influences</label>
 		<textarea id="influences" name="attr_influences"></textarea>
 	</div>
-	<div class="test-border mlp-sheet-padding">
+	<div class="basic-info-border mlp-sheet-padding rounded-top-right">
 		<label for="hang-ups" class="text-margin-none">Hang Ups</label>
 		<textarea id="hang-ups" name="attr_hang-ups"></textarea>
 	</div>
 	<!-- Health -->
-	<div class="test-border mlp-sheet-padding">
+	<div class="basic-info-border mlp-sheet-padding">
 		<label class="text-margin-none">Health</label>
 		<div class="health-movement-grid">
 			<label class ="text-size-small text-padding-none text-margin-none">Current</label>
@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<!-- Movement -->
-	<div class="test-border mlp-sheet-padding">
+	<div class="basic-info-border mlp-sheet-padding">
 		<label class="text-margin-none">Movement</label>
 		<div class="health-movement-grid">
 			<label for="ground-movement" class ="text-size-small text-padding-none text-margin-none">Ground</label>
@@ -63,7 +63,7 @@
 		</div>
 	</div>
 	<!-- Wealth -->
-	<div class="test-border mlp-sheet-padding">
+	<div class="basic-info-border mlp-sheet-padding">
 		<label class="text-margin-none">Wealth</label>
 		<div class="basic-flex-box">
 			<select id="wealth" name="attr_wealth-die" class="die-dropdown">
@@ -79,7 +79,7 @@
 		</div>
 	</div>
 	<!-- Friendship Points -->
-	<div class="test-border mlp-sheet-padding">
+	<div class="basic-info-border mlp-sheet-padding rounded-bottom-right">
 		<label class="text-margin-none">Friendship Points</label>
 		<input type="text" name="attr_friendship" class="two-char-text-box">
 	</div>
@@ -661,9 +661,9 @@
 			<div class="inner-grid-item-border-background padding-5-px">
 				<div class="basic-flex-box">
 					Name
-					<input type="text" name="attr_item-name" >
+					<input type="text" name="attr_item-name">
 					Amount
-					<input type="text" name="attr_item-amount">
+					<input type="text" name="attr_item-amount" class="two-char-text-box">
 				</div>
 				<div class="basic-flex-box vertical-flex">
 					Description
@@ -1026,4 +1026,56 @@
 	{
 		skill_die_roll("initiative-die", "Initiative", true);
     });
+	
+	/*Defenses Auto-Caculation-Script*/
+	function defense_update(essence_name, defense_name)
+	{
+		let essence_armour = essence_name + "-armour";
+		let essence_modifier = essence_name + "-modifier";
+		getAttrs([essence_name,essence_armour,essence_modifier], async (values) => 
+		{
+			let defense = Number(values[essence_name]) +  Number(values[essence_armour]) +  Number(values[essence_modifier]);
+			console.log(defense);
+			defense = defense.toString();
+			console.log(defense);
+			console.log(defense_name);
+			
+			/*Hack for now*/
+			switch(defense_name)
+			{
+				case "evasion":
+					setAttrs({"evasion": defense});
+					break;
+				case "toughness":
+					setAttrs({"toughness": defense});
+					break;
+				case "willpower":
+					setAttrs({"willpower": defense});
+					break;
+				case "cleverness":
+					setAttrs({"cleverness": defense});
+					break;
+				default:
+					console.log("Misty says you didn't give a valid defense name and you are stupid");
+			}
+		});
+	}
+	
+	on("change:strength change:strength-armour change:strength-modifier", function(eventInfo) {
+		defense_update("strength", "toughness");
+	});
+
+	on("change:speed change:speed-armour change:speed-modifier", function(eventInfo) {
+		defense_update("speed", "evasion");
+	});
+	
+	on("change:smarts change:smarts-armour change:smarts-modifier", function(eventInfo) {
+		defense_update("smarts", "willpower");
+	});
+	
+	on("change:social change:social-armour change:social-modifier", function(eventInfo) {
+		defense_update("social", "cleverness");
+	});
+	
+	
 </script>
