@@ -694,12 +694,12 @@
 			{{#rollBetween() roll2 39 49}}
                 <h4 class="sheet-good-roll">Auto Crit</h4>
             {{/rollBetween() roll2 39 49}}
-			{{#rollTotal() roll2 -2}}
+			{{#rollTotal() roll2 -20}}
 				<h4 class="sheet-bad-roll">Auto Fail</h4>
-			{{/rollTotal() roll2 -2}}			
-			{{#rollTotal() roll2 -4}}
+			{{/rollTotal() roll2 -20}}			
+			{{#rollTotal() roll2 -40}}
 				<h4 class="sheet-bad-roll">Auto Fumble</h4>
-			{{/rollTotal() roll2 -4}}
+			{{/rollTotal() roll2 -40}}
         </div>
     </div>
 </rolltemplate>
@@ -781,10 +781,10 @@
 				skill_die_string = "0";
 				return skill_die_string;
 			case DIE_LADDER.AUTO_FUMBLE:
-				skill_die_string = "-4";
+				skill_die_string = "-40";
 				return skill_die_string;
 			case DIE_LADDER.AUTO_FAIL:
-				skill_die_string =  "-2";
+				skill_die_string =  "-20";
 				return skill_die_string;
 			case DIE_LADDER.AUTO_PASS:
 				skill_die_string =  "30";
