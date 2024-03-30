@@ -888,7 +888,6 @@
 				let queryRoll = await startRoll("!{{spec=[[?{Specialized|No,0|Yes,1}]]}}");
 				finishRoll(queryRoll.rollId);
 				speced = queryRoll.results.spec.result;
-				console.log(speced);
 			}
 			else
 			{
@@ -913,7 +912,6 @@
 			const total = d20_roll+skil_die_roll;
 			
 			/*Send result to tracker if initiative roll*/
-			console.log(skill_to_roll);
 			if(skill_to_roll === "initiative-die")
 			{
 				let to_tracker = "!{{total=[[" + total.toString() + "&{tracker}]]}}";
