@@ -707,7 +707,6 @@
 <!-- SCRIPT!!!-->
 
 <script type="text/worker">
-    /*Enbetter later*/
 
 	const DIE_LADDER = Object.freeze({ 
 		AUTO_FUMBLE: -2,
@@ -725,7 +724,6 @@
 		AUTO_CRIT: 16
 	}); 
 
-	//todo fix the dice and stuff
 	const die_shift_string_base = "!{{upshift=[[?{Up/Down Shift?|No Shift, 0 |-2 (Auto Fumble), -2|-1 (Auto Fail), -1|+1 (d2), 2|+2 (d4), 4|+3 (d6), 6|+4 (d8), 8|+5 (d10), 10|+6 (d12), 12|+7 (2d8), 13|+8 (3d6), 14|+9 (Auto Success), 15|+10 (Auto Crit), 16|}]]}}";
 	const die_shift_string_d2 =   "!{{upshift=[[?{Up/Down Shift?|No Shift, 2|-3 (Auto Fumble), -2|-2 (Auto Fail), -1|-1 (base die), 0|+1 (d4), 4|+2 (d6), 6|+3 (d8), 8|+4 (d10), 10|+5 (d12), 12|+6 (2d8), 13|+7 (3d6), 14|+8 (Auto Success), 15|+9 (Auto Crit), 16|}]]}}";
 	const die_shift_string_d4 =   "!{{upshift=[[?{Up/Down Shift?|No Shift, 4|-4 (Auto Fumble), -2|-3 (Auto Fail), -1|-2 (base die), 0|-1 (d2), 2|+1 (d6), 6|+2 (d8), 8|+3 (d10), 10|+4 (d12), 12|+5 (2d8), 13|+6 (3d6), 14|+7 (Auto Success), 15|+8 (Auto Crit), 16|}]]}}";
@@ -737,6 +735,11 @@
 	const default_roll_string_start = "&{template:skill-die} {{roll-type=";
 	const default_roll_string_end = " Roll}}  {{roll1=[[?{Edge/Snag?|Normal,1d20|Edge,2d20kh1|Snag,2d20kl1}]]}}";
 	
+	/* @brief This function selects the dice upshift string based 
+	 * on the base die input.
+	 * @param skilld_ie - string representing base die value
+	 * @result - string with upshift roll queryRoll
+	 */
 	function upshfit_die_query(skill_die) 
 	{
 		let die_string;
@@ -769,7 +772,12 @@
 		}
 		return die_string;
 	}
-	
+	/* @brief generates skill die string based on input die value
+	 * and specialization flag
+	 * @param final_die_val - integer representing die value enum
+	 * @param is_speced - boolean flag to pick between specalized and non-specialized die strings
+	 * @result - string for skill die roll
+	 */
 	function create_skill_die_string(final_die_val, is_speced)
 	{
 		let skill_die_string;
@@ -796,7 +804,6 @@
 		
 		if(is_speced === 0)
 		{ 
-			console.log("Pipp says we have NOT specialized!");
 			switch(final_die_val)
 			{
 				case DIE_LADDER.D2:
@@ -829,7 +836,6 @@
 		}
 		else
 		{
-			console.log("Izzy says we have specialized!");
 			switch(final_die_val)
 			{
 				case DIE_LADDER.D2:
@@ -860,11 +866,14 @@
 					console.log("Whoops, no valid die!");
 			}
 		}
-		console.log(skill_die_string);
-	
 		return skill_die_string;
 	}
 
+	/* @brief function to generate skill roll and send results to template
+	 * @param skill_to_roll - string matching the attribute name for the skill roll
+	 * @param skill_name - string to display roll type in the output template
+	 * @param has_specialization - boolean flag indicating if this skill uses the specalization system
+	 */
     function skill_die_roll(skill_to_roll, skill_name, has_specialization)
 	{
 		getAttrs([skill_to_roll], async (values) => 
@@ -872,10 +881,8 @@
 			let roll_string;
 			let speced;
 
-			console.log(values);
 			let skill_die = values[skill_to_roll];
-			console.log(skill_die);
-			
+
 			if(has_specialization === true)
 			{
 				let queryRoll = await startRoll("!{{spec=[[?{Specialized|No,0|Yes,1}]]}}");
@@ -893,7 +900,6 @@
 			let shift_query = await startRoll(roll_string);
 			finishRoll(shift_query.rollId);
 			let final_die_val = shift_query.results.upshift.result;
-			console.log("final die val is", final_die_val);
 			
 			/*Then we can generate the final roll*/
 			let skill_die_string = "{{roll2=[[" + create_skill_die_string(final_die_val, speced) + "]]}}";
@@ -901,7 +907,6 @@
 
 			/*Then we pass the final roll to the roll thing*/
 			let results = await startRoll(roll_string);
-			console.log("Hitch says print debug is the sign of a poor developer");
 			
 			const d20_roll = results.results.roll1.result;
 			const skil_die_roll = results.results.roll2.result;
@@ -911,7 +916,6 @@
 			console.log(skill_to_roll);
 			if(skill_to_roll === "initiative-die")
 			{
-				console.log("This is an intiative roll!");
 				let to_tracker = "!{{total=[[" + total.toString() + "&{tracker}]]}}";
 				let tracker_roll = await startRoll(to_tracker);
 				finishRoll(tracker_roll.rollId);
@@ -921,7 +925,40 @@
 		});
 	}
 	
-	/*Ponder a better way to do this?*/
+	/* @brief Caculates and updates essence defense from
+	 * essence, armour, and modifier fields.
+	 * @param essence_name - attribute name for the essence to check.
+	 * @param defense_name - attribute name for defense to update.
+	 */
+	function defense_update(essence_name, defense_name)
+	{
+		let essence_armour = essence_name + "-armour";
+		let essence_modifier = essence_name + "-modifier";
+		getAttrs([essence_name,essence_armour,essence_modifier], async (values) => 
+		{
+			let defense = Number(values[essence_name]) +  Number(values[essence_armour]) +  Number(values[essence_modifier]);
+			defense = defense.toString();
+			
+			/*Hack for now*/
+			switch(defense_name)
+			{
+				case "evasion":
+					setAttrs({"evasion": defense});
+					break;
+				case "toughness":
+					setAttrs({"toughness": defense});
+					break;
+				case "willpower":
+					setAttrs({"willpower": defense});
+					break;
+				case "cleverness":
+					setAttrs({"cleverness": defense});
+					break;
+				default:
+					console.log("Input name not valid, try again.");
+			}
+		});
+	}
 	
 	/*Strength Roll Buttons*/
 	on('clicked:athletics-roll', async (info) => 
@@ -1028,39 +1065,6 @@
     });
 	
 	/*Defenses Auto-Caculation-Script*/
-	function defense_update(essence_name, defense_name)
-	{
-		let essence_armour = essence_name + "-armour";
-		let essence_modifier = essence_name + "-modifier";
-		getAttrs([essence_name,essence_armour,essence_modifier], async (values) => 
-		{
-			let defense = Number(values[essence_name]) +  Number(values[essence_armour]) +  Number(values[essence_modifier]);
-			console.log(defense);
-			defense = defense.toString();
-			console.log(defense);
-			console.log(defense_name);
-			
-			/*Hack for now*/
-			switch(defense_name)
-			{
-				case "evasion":
-					setAttrs({"evasion": defense});
-					break;
-				case "toughness":
-					setAttrs({"toughness": defense});
-					break;
-				case "willpower":
-					setAttrs({"willpower": defense});
-					break;
-				case "cleverness":
-					setAttrs({"cleverness": defense});
-					break;
-				default:
-					console.log("Misty says you didn't give a valid defense name and you are stupid");
-			}
-		});
-	}
-	
 	on("change:strength change:strength-armour change:strength-modifier", function(eventInfo) {
 		defense_update("strength", "toughness");
 	});
