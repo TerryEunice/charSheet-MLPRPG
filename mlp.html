@@ -934,7 +934,7 @@
 		let essence_modifier = essence_name + "-modifier";
 		getAttrs([essence_name,essence_armour,essence_modifier], async (values) => 
 		{
-			let defense = Number(values[essence_name]) +  Number(values[essence_armour]) +  Number(values[essence_modifier]);
+			let defense = 10 + Number(values[essence_name]) +  Number(values[essence_armour]) +  Number(values[essence_modifier]);
 			defense = defense.toString();
 			
 			/*Hack for now*/
