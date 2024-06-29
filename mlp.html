@@ -734,6 +734,7 @@
 	
 	const default_roll_string_start = "&{template:skill-die} {{roll-type=";
 	const default_roll_string_end = " Roll}}  {{roll1=[[?{Edge/Snag?|Normal,1d20|Edge,2d20kh1|Snag,2d20kl1}]]}}";
+	const unskilled_roll_string_end = " Roll}}  {{roll1=[[?{Snag/Normal?|Snag,2d20kl1|Normal,1d20}]]}}";
 	
 	/* @brief This function selects the dice upshift string based 
 	 * on the base die input.
@@ -900,9 +901,15 @@
 			finishRoll(shift_query.rollId);
 			let final_die_val = shift_query.results.upshift.result;
 			
+			/*Unskilled rolls are done with snag*/
+			let d20_roll_string_end = default_roll_string_end;
+			if(skill_die == "d0")
+			{
+				d20_roll_string_end = unskilled_roll_string_end;
+			}
 			/*Then we can generate the final roll*/
 			let skill_die_string = "{{roll2=[[" + create_skill_die_string(final_die_val, speced) + "]]}}";
-			roll_string = default_roll_string_start + skill_name + default_roll_string_end + skill_die_string;
+			roll_string = default_roll_string_start + skill_name + d20_roll_string_end + skill_die_string;
 
 			/*Then we pass the final roll to the roll thing*/
 			let results = await startRoll(roll_string);
