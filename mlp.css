@@ -281,3 +281,29 @@ button {
   display: flex;
   padding: 5px;
 }
+
+/*Styling stuff for the tabs*/
+/* configure the tab buttons */
+.charsheet .sheet-skills,
+.charsheet .sheet-journal,
+.charsheet .sheet-configuration,
+.charsheet .sheet-inventory,
+.charsheet .sheet-notes {
+    display: none;
+}
+
+/* style the active button */
+.charsheet .sheet-tabstoggle[value="character"] ~ div .sheet-button0 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="journal"] ~ div .sheet-button1 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="configuration"] ~ div .sheet-button2 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="inventory"] ~ div .sheet-button3 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="notes"] ~ div .sheet-button4 {outline: 2px solid red;}
+
+/* show the selected tab */
+.charsheet .sheet-tabstoggle[value="character"] ~ div.sheet-skills,
+.charsheet .sheet-tabstoggle[value="journal"] ~ div.sheet-journal,
+.charsheet .sheet-tabstoggle[value="configuration"] ~ div.sheet-configuration,
+.charsheet .sheet-tabstoggle[value="inventory"] ~ div.sheet-inventory,
+.charsheet .sheet-tabstoggle[value="notes"] ~ div.sheet-notes {
+    display: block;
+}
