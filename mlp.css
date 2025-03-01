@@ -317,3 +317,10 @@ button {
 .charsheet .sheet-tabstoggle[value="notes"] ~ div.sheet-notes {
     display: block;
 }
+
+
+/*Sample Code for hiding a section*/
+.charsheet input.sheet-toggle-show:not(:checked) ~ div.hideable-area,
+.charsheet input.sheet-toggle-hide:checked ~ div.hideable-area {
+    display: none;
+}
