@@ -1,10 +1,15 @@
-
-
 /*GNU/CODE*/
 #the-whole-enchilada textarea {
 	resize: none;
 	width: 90%;
 	height: 55px;
+	margin-bottom: 0px;
+}
+
+#the-whole-enchilada .wider-text-box {
+	resize: none;
+	width: 98%;
+	height: 150px;
 	margin-bottom: 0px;
 }
 
@@ -55,6 +60,10 @@ button {
 	padding: 5px;
 }
 
+.margin-bottom-5px {
+	margin-bottom: 5px;
+}
+
 .sheet-white-text {
 	color: white;
 }
@@ -79,7 +88,7 @@ button {
 .die-dropdown {
   font-size: 10px;
   height: 24px;
-  width: 42px;
+  width: 50px;
 }
 
 .rounded-top-right {
@@ -89,8 +98,6 @@ button {
 .rounded-bottom-right {
 	border-bottom-right-radius: 15px;
 }
-
-
 
 .outer-grid-item-border-background {
   border: 3px solid #371e58;
@@ -224,8 +231,8 @@ button {
 	width: 90%;
 }
 
-/*Grid for Perks/Spells/Bonds/Inventory*/
-.spells-perks-grid {
+/*Background-grid*/
+.char-background-grid{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	
@@ -285,24 +292,27 @@ button {
 /*Styling stuff for the tabs*/
 /* configure the tab buttons */
 .charsheet .sheet-skills,
-.charsheet .sheet-journal,
-.charsheet .sheet-configuration,
+.charsheet .sheet-perks,
+.charsheet .sheet-spellcasting,
+.charsheet .sheet-background,
 .charsheet .sheet-inventory,
 .charsheet .sheet-notes {
     display: none;
 }
 
 /* style the active button */
-.charsheet .sheet-tabstoggle[value="character"] ~ div .sheet-button0 {outline: 2px solid red;}
-.charsheet .sheet-tabstoggle[value="journal"] ~ div .sheet-button1 {outline: 2px solid red;}
-.charsheet .sheet-tabstoggle[value="configuration"] ~ div .sheet-button2 {outline: 2px solid red;}
-.charsheet .sheet-tabstoggle[value="inventory"] ~ div .sheet-button3 {outline: 2px solid red;}
-.charsheet .sheet-tabstoggle[value="notes"] ~ div .sheet-button4 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="skills"] ~ div .sheet-button0 {outline: 2px solid #371e58;}
+.charsheet .sheet-tabstoggle[value="perks"] ~ div .sheet-button1 {outline: 2px solid #371e58;}
+.charsheet .sheet-tabstoggle[value="spellcasting"] ~ div .sheet-button2 {outline: 2px solid #371e58;}
+.charsheet .sheet-tabstoggle[value="background"] ~ div .sheet-button3 {outline: 2px solid #371e58;}
+.charsheet .sheet-tabstoggle[value="inventory"] ~ div .sheet-button4 {outline: 2px solid #371e58;}
+.charsheet .sheet-tabstoggle[value="notes"] ~ div .sheet-button5 {outline: 2px solid #371e58;}
 
 /* show the selected tab */
-.charsheet .sheet-tabstoggle[value="character"] ~ div.sheet-skills,
-.charsheet .sheet-tabstoggle[value="journal"] ~ div.sheet-journal,
-.charsheet .sheet-tabstoggle[value="configuration"] ~ div.sheet-configuration,
+.charsheet .sheet-tabstoggle[value="skills"] ~ div.sheet-skills,
+.charsheet .sheet-tabstoggle[value="perks"] ~ div.sheet-perks,
+.charsheet .sheet-tabstoggle[value="spellcasting"] ~ div.sheet-spellcasting,
+.charsheet .sheet-tabstoggle[value="background"] ~ div.sheet-background,
 .charsheet .sheet-tabstoggle[value="inventory"] ~ div.sheet-inventory,
 .charsheet .sheet-tabstoggle[value="notes"] ~ div.sheet-notes {
     display: block;

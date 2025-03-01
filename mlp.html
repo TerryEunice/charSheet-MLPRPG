@@ -88,11 +88,12 @@
     <!-- Main Sheet Tabs --->
 	<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="character" />
 	<div>
-		<button type="action" name="act_character" class="sheet-button0">Skills</button>
-		<button type="action" name="act_journal" class="sheet-button1">Perks</button>
-		<button type="action" name="act_configuration" class="sheet-button2">Spellcasting</button>
-		<button type="action" name="act_inventory" class="sheet-button3">Inventory</button>
-		<button type="action" name="act_notes" class="sheet-button4">Notes</button>
+		<button type="action" name="act_skills" class="sheet-button0">Skills</button>
+		<button type="action" name="act_perks" class="sheet-button1">Perks</button>
+		<button type="action" name="act_spellcasting" class="sheet-button2">Spellcasting</button>
+		<button type="action" name="act_background" class="sheet-button3">Background</button>
+		<button type="action" name="act_inventory" class="sheet-button4">Inventory</button>
+		<button type="action" name="act_notes" class="sheet-button5">Notes</button>
 	</div>
 	<!-- Skills tab -->
 	<div class="sheet-skills">
@@ -575,120 +576,11 @@
 		</div>
 	</div>
 	</div>
-	<div class="sheet-journal">
-		<!-- Perks -->
-		<div class="spells-perks-grid">
-			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
-				<h3>Perks</h3>
-				<fieldset class="repeating_perks">
-					<div class="inner-grid-item-border-background padding-5-px">
-						<div class="basic-flex-box">
-							Name
-							<input type="text" name="attr_perk-name">
-							Uses
-							<input type="text" class="two-char-text-box" name="attr_perk-usage_num">
-						</div>
-						<div class="basic-flex-box vertical-flex">
-							Description
-							<textarea name="attr_perk-desc"></textarea>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-
-			<!-- Spells section!-->
-			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
-				<div class="basic-flex-box">
-					<h3>Spellcasting</h3>
-					<select id="spellcasting" name="attr_spellcasting-die" class="die-dropdown">
-						<option value="d0">0</option>
-						<option value="d2">d2</option>
-						<option value="d4">d4</option>
-						<option value="d6">d6</option>
-						<option value="d8">d8</option>
-						<option value="d10">d10</option>
-						<option value="d12">d12</option>
-					</select>
-					<button type="action" name="act_spellcasting-roll" class="text-size-small">Roll Spell</button>
-				</div>
-				<fieldset class="repeating_spells">
-					<div class="basic-flex-box vertical-flex padding-5-px inner-grid-item-border-background">
-						<div class="basic-flex-box">
-							Spell
-							<input type="text" name="attr_spell-name" class="input-width">
-							Specalized?
-							<input type="checkbox" name="attr_spell-specalized">
-						</div>
-						<div class="basic-flex-box centered-flex-grid-items">
-							Tier
-							<input type="text" name="attr_spell-tier" class="two-char-text-box">
-							Circle
-							<select name="attr_spellcasting-circle" class="horizontal-margin-5px">
-								<option value="aid">Aid</option>
-								<option value="beam">Beam</option>
-								<option value="enchant">Enchantment</option>
-								<option value="utility">Utility</option>
-							</select>
-						</div>
-						<div class="basic-flex-box">
-							Cost 
-							<input type="text" name="attr_spell-cost" class="two-char-text-box">
-							Duration 
-							<input type="text" name="attr_spell-duration" class="two-char-text-box">
-							Range 
-							<input type="text" name="attr_spell-range" class="two-char-text-box">
-							
-						</div>
-						<div class="basic-flex-box vertical-flex">
-							Description
-							<textarea name="attr_spell-desc"></textarea>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-			
-			<!--Bonds-->
-			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
-				<h3>Bonds</h3>
-				<fieldset class="repeating_bonds">
-					<div class="inner-grid-item-border-background padding-5-px">
-						<div class="basic-flex-box">
-							Name
-							<input type="text" name="attr_bond-name">
-						</div>
-						<div class="basic-flex-box vertical-flex">
-							Description
-							<textarea name="attr_bond-desc"></textarea>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-
-			<!--Iventory-->
-			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
-				<h3>Inventory</h3>
-				<fieldset class="repeating_inventory">
-					<div class="inner-grid-item-border-background padding-5-px">
-						<div class="basic-flex-box">
-							Name
-							<input type="text" name="attr_item-name">
-							Amount
-							<input type="text" name="attr_item-amount" class="two-char-text-box">
-						</div>
-						<div class="basic-flex-box vertical-flex">
-							Description
-							<textarea name="attr_item-desc"></textarea>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-		</div>
-	</div>
-	<div class="sheet-configuration">
+	<div class="sheet-perks char-background-grid">
 		<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
 			<h3>Perks</h3>
 			<fieldset class="repeating_perks">
-				<div class="inner-grid-item-border-background padding-5-px">
+				<div class="inner-grid-item-border-background padding-5-px margin-bottom-5px">
 					<div class="basic-flex-box">
 						Name
 						<input type="text" name="attr_perk-name">
@@ -703,11 +595,147 @@
 			</fieldset>
 		</div>
 	</div>
-	<div class="sheet-inventory">
-		<h2>Izzy says hi</h2>
+	<div class="sheet-spellcasting char-background-grid">
+		<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+			<div class="basic-flex-box">
+				<h3>Spellcasting</h3>
+				<select id="spellcasting" name="attr_spellcasting-die" class="die-dropdown">
+					<option value="d0">0</option>
+					<option value="d2">d2</option>
+					<option value="d4">d4</option>
+					<option value="d6">d6</option>
+					<option value="d8">d8</option>
+					<option value="d10">d10</option>
+					<option value="d12">d12</option>
+				</select>
+				<button type="action" name="act_spellcasting-roll" class="text-size-small">Roll Spell</button>
+			</div>
+			<fieldset class="repeating_spells">
+				<div class="basic-flex-box vertical-flex padding-5-px inner-grid-item-border-background margin-bottom-5px">
+					<div class="basic-flex-box">
+						Spell
+						<input type="text" name="attr_spell-name" class="input-width">
+						Specalized?
+						<input type="checkbox" name="attr_spell-specalized">
+					</div>
+					<div class="basic-flex-box centered-flex-grid-items">
+						Tier
+						<input type="text" name="attr_spell-tier" class="two-char-text-box">
+						Circle
+						<select name="attr_spellcasting-circle" class="horizontal-margin-5px">
+							<option value="aid">Aid</option>
+							<option value="beam">Beam</option>
+							<option value="enchant">Enchantment</option>
+							<option value="utility">Utility</option>
+						</select>
+					</div>
+					<div class="basic-flex-box">
+						Cost 
+						<input type="text" name="attr_spell-cost" class="two-char-text-box">
+						Duration 
+						<input type="text" name="attr_spell-duration" class="two-char-text-box">
+						Range 
+						<input type="text" name="attr_spell-range" class="two-char-text-box">
+						
+					</div>
+					<div class="basic-flex-box vertical-flex">
+						Description
+						<textarea name="attr_spell-desc"></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</div>
 	</div>
-	<div class="sheet-notes">
-		<h2>Dizzy says hi</h2>
+	<div class="sheet-background">
+		<!-- Influences -->
+		<div class="char-background-grid">
+			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+				<h3>Influences</h3>
+				<fieldset class="repeating_influences">
+					<div class="inner-grid-item-border-background padding-5-px margin-bottom-5px">
+						<div class="basic-flex-box">
+							Name
+							<input type="text" name="attr_influence-name">
+							Uses
+							<input type="text" class="two-char-text-box" name="attr_influence-usage_num">
+						</div>
+						<div class="basic-flex-box vertical-flex">
+							Description
+							<textarea name="attr_influence-desc"></textarea>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<!--Hang Ups-->
+			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+				<h3>Hang-Ups</h3>
+				<fieldset class="repeating_hangups">
+					<div class="inner-grid-item-border-background padding-5-px margin-bottom-5px">
+						<div class="basic-flex-box">
+							Name
+							<input type="text" name="attr_hang-ups-name">
+						</div>
+						<div class="basic-flex-box vertical-flex">
+							Description
+							<textarea name="attr_hang-ups-desc"></textarea>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<!--Bonds-->
+			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+				<h3>Bonds</h3>
+				<fieldset class="repeating_bonds">
+					<div class="inner-grid-item-border-background padding-5-px margin-bottom-5px">
+						<div class="basic-flex-box">
+							Name
+							<input type="text" name="attr_bond-name">
+						</div>
+						<div class="basic-flex-box vertical-flex">
+							Description
+							<textarea name="attr_bond-desc"></textarea>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<!--Backstory-->
+			<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+				<h3>Backstory</h3>
+				<textarea name="attr_backstory-desc" class="wider-text-box"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="sheet-inventory char-background-grid">
+		<!--Iventory-->
+		<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+			<h3>Inventory</h3>
+			<fieldset class="repeating_inventory">
+				<div class="inner-grid-item-border-background padding-5-px margin-bottom-5px">
+					<div class="basic-flex-box">
+						Name
+						<input type="text" name="attr_item-name">
+						Amount
+						<input type="text" name="attr_item-amount" class="two-char-text-box">
+					</div>
+					<div class="basic-flex-box vertical-flex">
+						Description
+						<textarea name="attr_item-desc"></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<div class="sheet-notes char-background-grid">
+		<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+			<h3>Notes</h3>
+			<fieldset class="repeating_notes">
+				<div class="inner-grid-item-border-background padding-5-px margin-bottom-5px">
+					<div class="basic-flex-box vertical-flex">
+						<textarea name="attr_notes-desc"></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</div>
 	</div>
 </div>
 
@@ -742,7 +770,7 @@
 <!-- SCRIPT!!!-->
 
 <script type="text/worker">
-    const buttonlist = ["character", "journal", "configuration", "inventory", "notes"];
+    const buttonlist = ["skills", "perks", "spellcasting", "background", "inventory", "notes"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
