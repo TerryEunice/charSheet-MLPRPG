@@ -48,8 +48,8 @@
 			<div class="health-movement-grid">
 				<label class ="text-size-small text-padding-none text-margin-none">Current</label>
 				<label class ="text-size-small text-padding-none text-margin-none">Max</label>
-				<input type="text" name="attr_current-health" class="two-char-text-box">
-				<input type="text" name="attr_max-health" class="two-char-text-box">
+				<input type="text" name="attr_health" class="two-char-text-box">
+				<input type="text" name="attr_health_max" class="two-char-text-box">
 			</div>
 		</div>
 		<!-- Movement -->
@@ -83,33 +83,48 @@
 			<label class="text-margin-none">Friendship Points</label>
 			<input type="text" name="attr_friendship" class="two-char-text-box">
 		</div>
-	</div>
+	</div>	
+
+<!--
+<div class="header">
+    <div class="tab-button active" data-tab="core">Core</div>
+    <div class="tab-button" data-tab="spells">Spells</div>
+    <div class="tab-button" data-tab="bio">Bio</div>
+    <div class="tab-button" data-tab="settings">Settings</div>
+</div>
+<div class="body">
+    <div class="tab-container active" data-tab="core">This is the Core tab!</div>
+    <div class="tab-container" data-tab="spells">This is the Spells tab!</div>
+    <div class="tab-container" data-tab="bio">This is the Bio tab!</div>
+    <div class="tab-container" data-tab="settings">This is the Settings tab!</div>
+</div>
+-->
+
 
     <!-- Main Sheet Tabs --->
 	<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="character" />
 	<div>
 		<button type="action" name="act_skills" class="sheet-button0">Skills</button>
-		<button type="action" name="act_perks" class="sheet-button1">Perks</button>
-		<button type="action" name="act_spellcasting" class="sheet-button2">Spellcasting</button>
-		<button type="action" name="act_background" class="sheet-button3">Background</button>
-		<button type="action" name="act_inventory" class="sheet-button4">Inventory</button>
-		<button type="action" name="act_notes" class="sheet-button5">Notes</button>
+		<button type="action" name="act_attacks" class="sheet-button1">Attacks</button>
+		<button type="action" name="act_perks" class="sheet-button2">Perks</button>
+		<button type="action" name="act_spellcasting" class="sheet-button3">Spellcasting</button>
+		<button type="action" name="act_background" class="sheet-button4">Background</button>
+		<button type="action" name="act_inventory" class="sheet-button5">Inventory</button>
+		<button type="action" name="act_notes" class="sheet-button6">Notes</button>
 	</div>
 	<!-- Skills tab -->
 	<div class="sheet-skills">
 		<div class="essence-grid">
-		<div class="essence-header"> STRENGTH </div>
-		<div class="essence-header"> SPEED </div>
-		<div class="essence-header"> SMARTS </div>
-		<div class="essence-header"> SOCIAL </div>
+		<div class="essence-header"> STRENGTH <span name="attr_strength"></div>
+		<div class="essence-header"> SPEED <span name="attr_speed"></div>
+		<div class="essence-header"> SMARTS <span name="attr_smarts"></div>
+		<div class="essence-header"> SOCIAL <span name="attr_social"></div>
 		<!-- STRENGTH ESSENCE COLUMN -->
 		<div id="strength-column" class="essence-coulmn-grid">
 			<!-- Toughness score + Essence D-->
-			<div class="skill-grid">
-				<div class="skill-grid-element specialization-name">
-					<label for="toughness-score" class="text-padding-none">Toughness</label>
-				</div>
-				<input type="text" id="toughness-score" name="attr_toughness" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<div class="bold-text font-size-18 centered-text">
+				<span>Toughness</span>
+				<span name="attr_toughness"></span>
 			</div>
 			<div class="essence-defense-grid">
 				<div class="skill-grid-element specialization-name">
@@ -218,11 +233,9 @@
 		<!-- SPEED ESSECNE COLUMN-->
 		<div id="speed-column" class="essence-coulmn-grid">
 			<!-- Evasion score + Essence D-->
-			<div class="skill-grid">
-				<div class="skill-grid-element specialization-name">
-					<label for="evasion-score" class="text-padding-none">Evasion</label>
-				</div>
-				<input type="text" id="evasion-score" name="attr_evasion" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<div class="bold-text font-size-18 centered-text">
+				<span>Evasion</span>
+				<span name="attr_evasion"></span>
 			</div>
 			<div class="essence-defense-grid">
 				<div class="skill-grid-element specialization-name">
@@ -349,11 +362,9 @@
 		<!-- SMARTS ESSECNE COLUMN-->
 		<div id="smarts-column" class="essence-coulmn-grid">
 			<!-- Willpower score + Essence D-->
-			<div class="skill-grid">
-				<div class="skill-grid-element specialization-name">
-					<label for="willpower-score" class="text-padding-none">Willpower</label>
-				</div>
-				<input type="text" id="willpower-score" name="attr_willpower" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<div class="bold-text font-size-18 centered-text">
+				<span>Willpower</span>
+				<span name="attr_willpower"></span>
 			</div>
 			<div class="essence-defense-grid">
 				<div class="skill-grid-element specialization-name">
@@ -463,11 +474,9 @@
 		<!-- SOCIAL ESSECNE COLUMN-->
 		<div id="social-column" class="essence-coulmn-grid">
 			<!-- Cleverness score + Essence D-->
-			<div class="skill-grid">
-				<div class="skill-grid-element specialization-name">
-					<label for="willpower-score" class="text-padding-none">Cleverness</label>
-				</div>
-				<input type="text" id="cleverness-score" name="attr_cleverness" placeholder="0" class="skill-grid-element two-char-text-box" maxlength="2">
+			<div class="bold-text font-size-18 centered-text">
+				<span>Cleverness</span>
+				<span name="attr_cleverness"></span>
 			</div>
 			<div class="essence-defense-grid">
 				<div class="skill-grid-element specialization-name">
@@ -574,7 +583,46 @@
 				<input type="text" name="attr_streetwise-spec" placeholder="Streetwise Specialization" class="skill-grid-element specialization-box">
 			</div>
 		</div>
+		</div>
 	</div>
+	<div class="sheet-attacks char-background-grid">
+		<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
+			<h3>Attacks</h3>
+			<fieldset class="repeating_attacks">
+				<div class="inner-grid-item-border-background padding-5-px margin-bottom-5px">
+					<div class="basic-flex-box">
+						<button type="action" name="act_attack-rowl" class="text-size-small">Rowl</button>
+						Name
+						<input type="text" name="attr_attack-name">
+						Ability
+						<select id="attack-ability" name="attr_attack-ability" class="die-dropdown">
+							<option value="might">Might</option>
+							<option value="finesse">Finesse</option>
+							<option value="targeting">Targeting</option>
+							<option value="spellcasting">Spellcasting</option>
+						</select>
+						Cost
+						<input type="text" class="two-char-text-box" name="attr_attack-cost">
+						Range
+						<input type="text" class="two-char-text-box" name="attr_attack-range">
+						Damage
+						<input type="text" class="two-char-text-box" name="attr_attack-damage">
+						Damge Type
+						<select id="damage-type" name="attr_attack-damage-type" class="die-dropdown">
+							<option value="blunt">Blunt</option>
+							<option value="sharp">Shapr</option>
+							<option value="fire">Fire</option>
+							<option value="bigizzy">Big Izzy</option>
+						</select>
+					</div>
+					<input type="checkbox" class="sheet-toggle-show" name="attr_desc_toggle_state"/>
+						<span>Show Description</span>
+					<div class="basic-flex-box vertical-flex hideable-area">
+						<textarea name="attr_attack-desc"></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</div>
 	</div>
 	<div class="sheet-perks char-background-grid">
 		<div class="basic-flex-box vertical-flex padding-5-px outer-grid-item-border-background">
@@ -586,8 +634,15 @@
 						<input type="text" name="attr_perk-name">
 						Uses
 						<input type="text" class="two-char-text-box" name="attr_perk-usage_num">
+						Per
+						<select id="spellcasting" name="attr_perk-usages-period" class="die-dropdown">
+							<option value="round">Round</option>
+							<option value="scene">Scene</option>
+							<option value="day">Day</option>
+							<option value="session">Session</option>
+						</select>
 					</div>
-					<input type="checkbox" class="sheet-toggle-show" />
+					<input type="checkbox" class="sheet-toggle-show" name="attr_desc_toggle_state"/>
 						<span>Show Description</span>
 					<div class="basic-flex-box vertical-flex hideable-area">
 						<textarea name="attr_perk-desc"></textarea>
@@ -640,7 +695,7 @@
 						
 					</div>
 					<div>
-						<input type="checkbox" class="sheet-toggle-show"/>
+						<input type="checkbox" class="sheet-toggle-show" name="attr_desc_toggle_state"/>
 						<span>Show Description</span>
 						<div class="basic-flex-box vertical-flex hideable-area">
 							<textarea name="attr_spell-desc"></textarea>
@@ -663,7 +718,7 @@
 							Uses
 							<input type="text" class="two-char-text-box" name="attr_influence-usage_num">
 						</div>
-						<input type="checkbox" class="sheet-toggle-show" />
+						<input type="checkbox" class="sheet-toggle-show" name="attr_desc_toggle_state"/>
 						<span>Show Description</span>
 						<div class="basic-flex-box vertical-flex hideable-area">
 							<textarea name="attr_influence-desc"></textarea>
@@ -680,7 +735,7 @@
 							Name
 							<input type="text" name="attr_hang-ups-name">
 						</div>
-						<input type="checkbox" class="sheet-toggle-show" />
+						<input type="checkbox" class="sheet-toggle-show" name="attr_desc_toggle_state"/>
 						<span>Show Description</span>
 						<div class="basic-flex-box vertical-flex hideable-area">
 							<textarea name="attr_hang-ups-desc"></textarea>
@@ -697,7 +752,7 @@
 							Name
 							<input type="text" name="attr_bond-name">
 						</div>
-						<input type="checkbox" class="sheet-toggle-show" />
+						<input type="checkbox" class="sheet-toggle-show" name="attr_desc_toggle_state"/>
 						<span>Show Description</span>
 						<div class="basic-flex-box vertical-flex hideable-area">
 							<textarea name="attr_bond-desc"></textarea>
@@ -724,7 +779,7 @@
 						Amount
 						<input type="text" name="attr_item-amount" class="two-char-text-box">
 					</div>
-					<input type="checkbox" class="sheet-toggle-show" />
+					<input type="checkbox" class="sheet-toggle-show" name="attr_item-desc-toggle"/>
 					<span>Show Description</span>
 					<div class="basic-flex-box vertical-flex hideable-area">
 						<textarea name="attr_item-desc"></textarea>
@@ -745,6 +800,7 @@
 			</fieldset>
 		</div>
 	</div>
+	
 </div>
 
 <!-- Roll templates --->
@@ -775,10 +831,43 @@
     </div>
 </rolltemplate>
 
+<!-- Roll templates --->
+<rolltemplate class="sheet-rolltemplate-skill-die-alt">
+    <div class="sheet-template-container">
+        <h3>{{roll-type}}</h3>
+        <div class="sheet-results">
+			<!--Normal Display-->
+			{{#rollBetween() roll1 -1 39}}
+				<h4 class="flex-items-stretch">Total {{roll1}}</h4>
+			{{/rollBetween() roll1 -1 39}}
+			<!--Auto Pass/Fail Display-->
+			{{#rollBetween() roll1 40 79}}
+                <h4 class="sheet-good-roll">Auto Pass</h4>
+            {{/rollBetween() roll1 40 79}}
+			{{#rollBetween() roll1 80 120}}
+                <h4 class="sheet-good-roll">Auto Crit</h4>
+            {{/rollBetween() roll1 80 120}}
+			{{#rollBetween() roll1 -2 -30}}
+				<h4 class="sheet-bad-roll">Auto Fail</h4>
+			{{/rollBetween() roll1 -2 -30}}			
+			{{#rollBetween() roll1 -31 -80}}
+				<h4 class="sheet-bad-roll">Auto Fumble</h4>
+			{{/rollBetween() roll1 -31 -80}}
+        </div>
+    </div>
+</rolltemplate>
+
 <!-- SCRIPT!!!-->
 
 <script type="text/worker">
-    const buttonlist = ["skills", "perks", "spellcasting", "background", "inventory", "notes"];
+    /*Try to learn this izzy!*/
+    $20('.header .tab-button').on('click', (e) => {
+        const tab = e.htmlAttributes['data-tab'];
+        $20('div[data-tab]').removeClass('active');
+        $20(`div[data-tab=${tab}]`).addClass('active');
+    });
+
+    const buttonlist = ["skills", "attacks", "perks", "spellcasting", "background", "inventory", "notes"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -986,6 +1075,7 @@
 			{
 				d20_roll_string_end = unskilled_roll_string_end;
 			}
+
 			/*Then we can generate the final roll*/
 			let skill_die_string = "{{roll2=[[" + create_skill_die_string(final_die_val, speced) + "]]}}";
 			roll_string = default_roll_string_start + skill_name + d20_roll_string_end + skill_die_string;
@@ -1043,6 +1133,34 @@
 			}
 		});
 	}
+	
+	/* @brief Capitalize the first character of a string.
+	 * @param input string. 
+	 * @result - input string but with first character capatalized.
+	 */
+	function capitalize_first_letter(input_string) 
+	{
+		let output_string;
+		let first_char = input_string.substring(0,1);
+		let rest = input_string.substring(1);
+		
+		output_string = first_char.toUpperCase() + rest;
+		console.log(output_string);
+		return output_string;
+	}
+	
+	
+	/*Attacks rolls*/
+	on('clicked:repeating_attacks:attack-rowl', async (info) => 
+	{
+		console.log("Activate button clicked!!!!!!");
+		getAttrs(["repeating_attacks_attack-ability"], async (values) => 
+		{
+			let attack_ability_name = values["repeating_attacks_attack-ability"]
+			let attack_ability_die = attack_ability_name +"-die";
+			skill_die_roll(attack_ability_die, capitalize_first_letter(attack_ability_name)  + " Attack", true);
+		});
+    });
 	
 	/*Strength Roll Buttons*/
 	on('clicked:athletics-roll', async (info) => 
@@ -1148,6 +1266,12 @@
 		skill_die_roll("initiative-die", "Initiative", true);
     });
 	
+	/*Macro + Mod support*/
+	on("change:roll-trigger-test", function(eventInfo) {
+		skill_die_roll("athletics-die", "Athletics", true);
+	});
+
+	
 	/*Defenses Auto-Caculation-Script*/
 	on("change:strength change:strength-armour change:strength-modifier", function(eventInfo) {
 		defense_update("strength", "toughness");
@@ -1165,5 +1289,192 @@
 		defense_update("social", "cleverness");
 	});
 	
+	on("change:roll-do", function(eventInfo) {
+		console.log(eventInfo);
+		skill_die_roll("wealth-die", "Wealth", false);
+	});
+	
+	const alt_roll_string_start = "&{template:skill-die-alt} {{roll-type=";
+	const skill_die_string_d2 = "d2";
+	const skill_die_string_d4 = "?{Specialized&#124;No&#44; 1d4&#124;Yes&#44{1d2&amp;#44;1d4&amp;#125;k1&#125;"
+	const skill_die_string_d6 = "?{Specialized&#124;No&#44; 1d6&#124;Yes&#44{1d2&amp;#44;1d4&amp;#44;1d6&amp;#125;k1&#125;"
+	const skill_die_string_d8 = "?{Specialized&#124;No&#44; 1d8&#124;Yes&#44{1d2&amp;#44;1d4&amp;#44;1d6&amp;#44;1d8&amp;#125;k1&#125;"
+	const skill_die_string_d10 = "?{Specialized&#124;No&#44; 1d10&#124;Yes&#44{1d2&amp;#44;1d4&amp;#44;1d6&amp;#44;1d8&amp;#44;1d10&amp;#125;k1&#125;"
+	const skill_die_string_d12 = "?{Specialized&#124;No&#44; 1d12&#124;Yes&#44{1d2&amp;#44;1d4&amp;#44;1d6&amp;#44;1d8&amp;#44;1d10&amp;#44;1d12&amp;#125;k1&#125;"
+	const skill_die_string_2d8 = "?{Specialized&#124;No&#44; 2d8&#124;Yes&#44{1d2&amp;#44;1d4&amp;#44;1d6&amp;#44;1d8&amp;#44;1d10&amp;#44;1d12&amp;#44;2d8&amp;#125;k1&#125;"
+	const skill_die_string_3d6 = "?{Specialized&#124;No&#44; 3d6&#124;Yes&#44{1d2&amp;#44;1d4&amp;#44;1d6&amp;#44;1d8&amp;#44;1d10&amp;#44;1d12&amp;#44;2d8&amp;#44;3d6&amp;#125;k1&#125;"
+
+	const skill_dice_string_start = "?{Up/Down Shift|No Shift, "
+	
+	/*@brief 
+	 *@param skill_die 
+	 *@return 
+	*/
+	function create_skill_dice_macro_string(skill_die)
+	{
+		let die_string = skill_dice_string_start;
+		
+		switch(skill_die)
+		{	
+			case "d0":
+				die_string = die_string + "0" + "|-2 (Auto Fumble), -55" + "|-1 (Auto Fail), -25" + "|+1 (d2), d2" + "|+2 (d4), " + skill_die_string_d4 + "|+3 (d6), " + skill_die_string_d6 + "|+4 (d8), " + skill_die_string_d8 + "|+5 (d10), " + skill_die_string_d10 + "|+6 (d12), " + skill_die_string_d12 + "|+7 (2d8), " + skill_die_string_2d8 + "|+8 (3d6), " + skill_die_string_3d6 + "|+9 (Auto Success), 40" + "|+10 (Auto Crit), 80" + "}]]";
+				break;
+			case "d2":
+				die_string = die_string + "d2" + "|-3 (Auto Fumble), -55" + "|-2 (Auto Fail), -25" + "|-1 (base), 0" + "|+1 (d4), " + skill_die_string_d4 + "|+2 (d6), " + skill_die_string_d6 + "|+3 (d8), " + skill_die_string_d8 + "|+4 (d10), " + skill_die_string_d10 + "|+5 (d12), " + skill_die_string_d12 + "|+6 (2d8), " + skill_die_string_2d8 + "|+7 (3d6), " + skill_die_string_3d6 + "|+8 (Auto Success), 40" + "|+9 (Auto Crit), 80" + "}]]";
+				break;
+			case "d4":
+				die_string = die_string + skill_die_string_d4 + "|-4 (Auto Fumble), -55" + "|-3 (Auto Fail), -25" + "|-2 (base), 0" + "|-1 (d2), d2" + "|+1 (d6), " + skill_die_string_d6 + "|+2 (d8), " + skill_die_string_d8 + "|+3 (d10), " + skill_die_string_d10 + "|+4 (d12), " + skill_die_string_d12 + "|+5 (2d8), " + skill_die_string_2d8 + "|+6 (3d6), " + skill_die_string_3d6 + "|+7 (Auto Success), 40" + "|+8 (Auto Crit), 80" + "}]]";
+				break;
+			case "d6":
+				die_string = die_string + skill_die_string_d6 + "|-5 (Auto Fumble), -55" + "|-4 (Auto Fail), -25" + "|-3 (base), 0" + "|-2 (d2), d2" + "|-1 (d4), " + skill_die_string_d4 + "|+1 (d8), " + skill_die_string_d8 + "|+2 (d10), " + skill_die_string_d10 + "|+3 (d12), " + skill_die_string_d12 + "|+4 (2d8), " + skill_die_string_2d8 + "|+5 (3d6), " + skill_die_string_3d6 + "|+6 (Auto Success), 40" + "|+7 (Auto Crit), 80" + "}]]";
+				break;
+			case "d8":
+				die_string = die_string + skill_die_string_d8 + "|-6 (Auto Fumble), -55" + "|-5 (Auto Fail), -25" + "|-4 (base), 0" + "|-3 (d2), d2" + "|-2 (d4), " + skill_die_string_d4 + "|-1 (d6), " + skill_die_string_d6 + "|+1 (d10), " + skill_die_string_d10 + "|+2 (d12), " + skill_die_string_d12 + "|+3 (2d8), " + skill_die_string_2d8 + "|+4 (3d6), " + skill_die_string_3d6 + "|+5 (Auto Success), 40" + "|+6 (Auto Crit), 80" + "}]]";
+				break;
+			case "d10":
+				die_string = die_string + skill_die_string_d10 + "|-7 (Auto Fumble), -55" + "|-6 (Auto Fail), -25" + "|-5 (base), 0" + "|-4 (d2), d2" + "|-3 (d4), " + skill_die_string_d4 + "|-2 (d6), " + skill_die_string_d6 + "|-1 (d8), " + skill_die_string_d8 + "|+1 (d12), " + skill_die_string_d12 + "|+2 (2d8), " + skill_die_string_2d8 + "|+3 (3d6), " + skill_die_string_3d6 + "|+4 (Auto Success), 40" + "|+5 (Auto Crit), 80" + "}]]";
+				break;
+			case "d12":
+				die_string = die_string + skill_die_string_d12 + "|-8 (Auto Fumble), -55" + "|-7 (Auto Fail), -25" + "|-6 (base), 0" + "|-5 (d2), d2" + "|-4 (d4), " + skill_die_string_d4 + "|-3 (d6), " + skill_die_string_d6 + "|-2 (d8), " + skill_die_string_d8 + "|-1 (d10), " + skill_die_string_d10 + "|+1 (2d8), " + skill_die_string_2d8 + "|+2 (3d6), " + skill_die_string_3d6 + "|+3 (Auto Success), 40" + "|+4 (Auto Crit), 80" + "}]]";
+				break;
+			default:
+				console.log("Whoops! No macthing skill die!");
+				die_string = die_shift_string_base;
+		}
+		console.log(die_string);
+		return die_string;
+	}
+	
+	/* @brief function to generate skill roll and send results to template
+	 * @param skill_roll_to_generate - string matching the attribute name for the skill roll
+	 * @param skill_name - string to display roll type in the output template
+	 */
+    function skill_die_roll_macro_generator(skill_roll_to_generate, skill_name)
+	{
+		getAttrs([skill_roll_to_generate], async (values) => 
+		{
+			let roll_string;
+			let speced;
+
+			let skill_die = values[skill_roll_to_generate];
+			console.log(skill_die);
+			
+			/*Unskilled rolls are done with snag*/
+			let d20_roll_string = "{{roll1=[[?{Edge/Snag?|Normal,1d20|Edge,2d20kh1|Snag,2d20kl1} +";
+			if(skill_die == "d0")
+			{
+				d20_roll_string = "{{roll1=[[?{Snag/Normal?|Snag,2d20kl1|Normal,1d20} +";
+			}
+			
+			/*Then we can generate the final roll*/
+			let skill_die_string = create_skill_dice_macro_string(skill_die) + "}}";
+			roll_string = alt_roll_string_start + skill_name + " Roll}}" + d20_roll_string + skill_die_string;
+				
+			console.log(roll_string);
+			
+			/*Lazy Hack 2*/
+			switch(skill_roll_to_generate)
+			{
+				case "athletics-die":
+					setAttrs({"athletics-die-roll-string": roll_string});
+					break;
+				case "brawn-die":
+					setAttrs({"brawn-die-roll-string": roll_string});
+					break;
+				case "intimidation-die":
+					setAttrs({"intimidation-die-roll-string": roll_string});
+					break;
+				case "might-die":
+					setAttrs({"might-die-roll-string": roll_string});
+					break;
+					
+				case "acrobatics-die":
+					setAttrs({"acrobatics-die-roll-string": roll_string});
+					break;
+				case "driving-die":
+					setAttrs({"driving-die-roll-string": roll_string});
+					break;
+				case "finesse-die":
+					setAttrs({"finesse-die-roll-string": roll_string});
+					break;
+				case "infiltration-die":
+					setAttrs({"infiltration-die-roll-string": roll_string});
+					break;
+				case "initiative-die":
+					setAttrs({"initiative-die-roll-string": roll_string});
+					break;
+				case "targeting-die":
+					setAttrs({"targeting-die-roll-string": roll_string});
+					break;
+					
+				case "alertness-die":
+					setAttrs({"alertness-die-roll-string": roll_string});
+					break;
+				case "culture-die":
+					setAttrs({"culture-die-roll-string": roll_string});
+					break;
+				case "science-die":
+					setAttrs({"science-die-roll-string": roll_string});
+					break;
+				case "survival-die":
+					setAttrs({"survival-die-roll-string": roll_string});
+					break;
+				case "technology-die":
+					setAttrs({"technology-die-roll-string": roll_string});
+					break;
+
+				case "animal-handling-die":
+					setAttrs({"animal-handling-die-roll-string": roll_string});
+					break;
+				case "deception-die":
+					setAttrs({"deception-die-roll-string": roll_string});
+					break;
+				case "performance-die":
+					setAttrs({"performance-die-roll-string": roll_string});
+					break;
+				case "persuasion-die":
+					setAttrs({"persuasion-die-roll-string": roll_string});
+					break;
+				case "streetwise-die":
+					setAttrs({"streetwise-die-roll-string": roll_string});
+					break;
+					
+				case "spellcasting-die":
+					setAttrs({"spellcasting-die-roll-string": roll_string});
+					break;
+					
+				default:
+					console.log("Error invalid die type!");
+			}	
+		});
+	}
+	
+	
+	/*Dice Macro autogen Script*/
+	on("sheet:opened", function(eventInfo) {
+		console.log("Cool beans Mrs. Moonbow!");
+		
+		skill_die_roll_macro_generator("athletics-die", "Athletics");
+		skill_die_roll_macro_generator("brawn-die", "Brawn");
+		skill_die_roll_macro_generator("intimidation-die", "Intimidation");
+		skill_die_roll_macro_generator("might-die", "Might");
+		skill_die_roll_macro_generator("acrobatics-die", "Acrobatics");
+		skill_die_roll_macro_generator("driving-die", "Driving");
+		skill_die_roll_macro_generator("finesse-die", "Finesse");
+		skill_die_roll_macro_generator("infiltration-die", "Infiltration");
+		skill_die_roll_macro_generator("initiative-die", "Initiative");
+		skill_die_roll_macro_generator("targeting-die", "Targeting");
+		skill_die_roll_macro_generator("alertness-die", "Alertness");
+		skill_die_roll_macro_generator("culture-die", "Culture");
+		skill_die_roll_macro_generator("science-die", "Science");
+		skill_die_roll_macro_generator("survival-die", "Survival");
+		skill_die_roll_macro_generator("technology-die", "Technology");
+		skill_die_roll_macro_generator("animal-handling-die", "Animal Handling");
+		skill_die_roll_macro_generator("deception-die", "Deception");
+		skill_die_roll_macro_generator("performance-die", "Performance");
+		skill_die_roll_macro_generator("persuasion-die", "Persuasion");
+		skill_die_roll_macro_generator("streetwise-die", "Streetwise");	
+		skill_die_roll_macro_generator("spellcasting-die", "Spellcasting");	
+	});
 	
 </script>
