@@ -595,7 +595,7 @@
 						Name
 						<input type="text" name="attr_attack-name">
 						Ability
-						<select id="attack-ability" name="attr_attack-ability" class="die-dropdown">
+						<select id="attack-ability" name="attr_attack-ability">
 							<option value="might">Might</option>
 							<option value="finesse">Finesse</option>
 							<option value="targeting">Targeting</option>
@@ -607,12 +607,20 @@
 						<input type="text" class="two-char-text-box" name="attr_attack-range">
 						Damage
 						<input type="text" class="two-char-text-box" name="attr_attack-damage">
-						Damge Type
-						<select id="damage-type" name="attr_attack-damage-type" class="die-dropdown">
+						Type
+						<select id="damage-type" name="attr_attack-damage-type">
+							<option value="acid">Acid</option>
 							<option value="blunt">Blunt</option>
-							<option value="sharp">Shapr</option>
+							<option value="cold">Cold</option>
+							<option value="electric">Electric</option>
+							<option value="energy">Energy</option>
 							<option value="fire">Fire</option>
-							<option value="bigizzy">Big Izzy</option>
+							<option value="laser">Laser</option>
+							<option value="poison">Poison</option>
+							<option value="psychic">Physchic</option>
+							<option value="sharp">Sharp</option>
+							<option value="sonic">Sonic</option>
+							<option value="stun">Stun</option>
 						</select>
 					</div>
 					<input type="checkbox" class="sheet-toggle-show" name="attr_desc_toggle_state"/>
@@ -854,6 +862,36 @@
 				<h4 class="sheet-bad-roll">Auto Fumble</h4>
 			{{/rollBetween() roll1 -31 -80}}
         </div>
+    </div>
+</rolltemplate>
+
+<!-- Roll templates --->
+<rolltemplate class="sheet-rolltemplate-attack">
+    <div class="sheet-template-container">
+        <h3>{{attack-name}} ({{attack-stat}})</h3>
+        <div class="sheet-results">
+			<!--Normal Display-->
+			{{#rollBetween() roll1 -1 39}}
+				<h4 class="flex-items-stretch">Total {{roll1}}</h4>
+			{{/rollBetween() roll1 -1 39}}
+			<!--Auto Pass/Fail Display-->
+			{{#rollBetween() roll1 40 79}}
+                <h4 class="sheet-good-roll">Auto Pass</h4>
+            {{/rollBetween() roll1 40 79}}
+			{{#rollBetween() roll1 80 120}}
+                <h4 class="sheet-good-roll">Auto Crit</h4>
+            {{/rollBetween() roll1 80 120}}
+			{{#rollBetween() roll1 -2 -30}}
+				<h4 class="sheet-bad-roll">Auto Fail</h4>
+			{{/rollBetween() roll1 -2 -30}}			
+			{{#rollBetween() roll1 -31 -80}}
+				<h4 class="sheet-bad-roll">Auto Fumble</h4>
+			{{/rollBetween() roll1 -31 -80}}
+        </div>
+		<!--Todo: figure out why the goddamn styles don't fucking work-->
+		<div class="sheet-results"><p style="margin:0px">Deals <span style="font-weight:bold">{{damage-amt}}</span> {{damage-type}} damage!</p></div>
+		<div class="sheet-results">{{desc}}</div>
+		
     </div>
 </rolltemplate>
 
@@ -1266,12 +1304,6 @@
 		skill_die_roll("initiative-die", "Initiative", true);
     });
 	
-	/*Macro + Mod support*/
-	on("change:roll-trigger-test", function(eventInfo) {
-		skill_die_roll("athletics-die", "Athletics", true);
-	});
-
-	
 	/*Defenses Auto-Caculation-Script*/
 	on("change:strength change:strength-armour change:strength-modifier", function(eventInfo) {
 		defense_update("strength", "toughness");
@@ -1289,11 +1321,8 @@
 		defense_update("social", "cleverness");
 	});
 	
-	on("change:roll-do", function(eventInfo) {
-		console.log(eventInfo);
-		skill_die_roll("wealth-die", "Wealth", false);
-	});
-	
+
+	/*Dice Macro Generation Functions and sheet workers*/
 	const alt_roll_string_start = "&{template:skill-die-alt} {{roll-type=";
 	const skill_die_string_d2 = "d2";
 	const skill_die_string_d4 = "?{Specialized&#124;No&#44; 1d4&#124;Yes&#44{1d2&amp;#44;1d4&amp;#125;k1&#125;"

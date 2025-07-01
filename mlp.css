@@ -60,6 +60,10 @@ button {
 	font-weight: bold;
 }
 
+.sheet-bold-text{
+	font-weight: bold;
+}
+
 .font-1p2-em{
 	font-size: 1.2em;
 }
@@ -272,59 +276,29 @@ button {
 }
 
 /*Roll Template Styles*/
-.sheet-rolltemplate-skill-die h4 {
-	color: black;
-	flex: 1 1 auto;
-}
-
-.sheet-rolltemplate-skill-die h3 {
-	color: black;
-}
-
-.sheet-rolltemplate-skill-die .sheet-bad-roll {
-	color: red;
-}
-
-.sheet-rolltemplate-skill-die .sheet-good-roll {
-	color: green;
-}
-
-.sheet-rolltemplate-skill-die .sheet-template-container {
-	display: flex;
-	flex-direction: column;
-	padding: 5px;
-	border: 2px solid #371e58;
-	border-radius: 10px;
-	background-color: #dcb3d4;	
-}
-
-.sheet-rolltemplate-skill-die .sheet-results{ 
-  border: 2px solid #371e58;
-  border-radius: 10px;
-  background: white;
-  display: flex;
-  padding: 5px;
-}
-
-/*alt roll template Styles*/
+.sheet-rolltemplate-skill-die h4,
 .sheet-rolltemplate-skill-die-alt h4 {
 	color: black;
 	flex: 1 1 auto;
 }
 
-.sheet-rolltemplate-skill-die-alt h3 {
+.sheet-rolltemplate-skill-die h3,
+.sheet-rolltemplate-skill-die-alt h3  {
 	color: black;
 }
 
+.sheet-rolltemplate-skill-die .sheet-bad-roll,
 .sheet-rolltemplate-skill-die-alt .sheet-bad-roll {
 	color: red;
 }
 
+.sheet-rolltemplate-skill-die .sheet-good-roll,
 .sheet-rolltemplate-skill-die-alt .sheet-good-roll {
 	color: green;
 }
 
-.sheet-rolltemplate-skill-die-alt .sheet-template-container {
+.sheet-rolltemplate-skill-die .sheet-template-container,
+.sheet-rolltemplate-skill-die-alt .sheet-template-container  {
 	display: flex;
 	flex-direction: column;
 	padding: 5px;
@@ -333,6 +307,7 @@ button {
 	background-color: #dcb3d4;	
 }
 
+.sheet-rolltemplate-skill-die .sheet-results,
 .sheet-rolltemplate-skill-die-alt .sheet-results{ 
   border: 2px solid #371e58;
   border-radius: 10px;
@@ -340,6 +315,44 @@ button {
   display: flex;
   padding: 5px;
 }
+
+/*attack roll template Styles*/
+.sheet-rolltemplate-attack h4 {
+	color: black;
+	flex: 1 1 auto;
+}
+
+.sheet-rolltemplate-attack h3 {
+	color: black;
+}
+
+.sheet-rolltemplate-attack .sheet-bad-roll {
+	color: red;
+}
+
+.sheet-rolltemplate-attack .sheet-good-roll {
+	color: green;
+}
+
+.sheet-rolltemplate-attack .sheet-template-container {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	border: 2px solid #371e58;
+	border-radius: 10px;
+	background-color: #dcb3d4;	
+	grid-gap: 5px;
+}
+
+.sheet-rolltemplate-attack .sheet-results{ 
+  border: 2px solid #371e58;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  padding: 5px;
+}
+/*probably needs to go here or something like that*/
+
 
 /*Styling stuff for the tabs*/
 /* configure the tab buttons */
